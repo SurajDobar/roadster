@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Play Tesla Roadster 2026 Online | 3D Hypercar Game" 
+  description="Play the 3D Tesla Roadster simulator in your browser. Free Roam, 1/4 Mile Drag Racing, Mario Kart Mountain Circuit, and Cyber Combat Arena."
+  canonical="https://roadster2026.com/play"
+>
+  <div style="display: flex; flex-direction: column; height: calc(100vh - 57px); background: var(--canvas); position: relative;">
+    
+    <!-- Top Game Control Bar (Strict Vercel Geist Styling with Live Theme Toggle) -->
+    <div style="background: var(--canvas-elevated); border-bottom: 1px solid var(--hairline); padding: 0.4rem 1.25rem; display: flex; align-items: center; justify-content: space-between; z-index: 10; flex-wrap: wrap; gap: 0.5rem;">
+      <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+        <span class="mono-eyebrow" style="color: var(--ink); font-weight: 700;" translate="no">ROADSTER 2026 SIMULATOR</span>
+        <span style="color: var(--hairline);" aria-hidden="true">•</span>
+        <span class="mono-eyebrow" style="color: var(--mute);">
+          [W,A,S,D] DRIVE &nbsp;|&nbsp; [CTRL] DRIFT &nbsp;|&nbsp; [SHIFT] THRUSTERS &nbsp;|&nbsp; [U] AUTO-UPRIGHT &nbsp;|&nbsp; [G] 2G SUCTION
+        </span>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 0.625rem;">
+        <button id="viewport-theme-toggle" class="btn-theme-toggle" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+          <span id="vp-theme-icon">☀</span>
+        </button>
+        <button id="fullscreen-btn" class="btn-pill-secondary" style="height: 30px; padding: 0 12px; font-size: 12px;" aria-label="Toggle Fullscreen">
+          <span aria-hidden="true">⛶</span> Fullscreen
+        </button>
+        <a href="/" class="btn-pill-secondary" style="height: 30px; padding: 0 12px; font-size: 12px;" aria-label="Exit Game to Home Page">
+          Exit to Home
+        </a>
+      </div>
+    </div>
+
+    <!-- Game Viewport Frame -->
+    <div style="flex: 1; position: relative; width: 100%; height: 100%; overflow: hidden; background: #000;">
+      <iframe 
+        id="game-iframe"
+        src="/game.html" 
+        style="width: 100%; height: 100%; border: none; display: block;"
+        allow="autoplay; fullscreen; camera; focus-without-user-activation *"
+        tabindex="0"
+        title="Tesla Roadster 2026 3D Simulator"
+      ></iframe>
+    </div>
+  </div>
+
+  <script>
+    const fsBtn = document.getElementById('fullscreen-btn');
+    const iframe = document.getElementById('game-iframe') as HTMLIFrameElement | null;
+    const vpThemeBtn = document.getElementById('viewport-theme-toggle');
+    const vpThemeIcon = document.getElementById('vp-theme-icon');
+
+    function syncViewportThemeIcon(t: string) {
+      if (vpThemeIcon) vpThemeIcon.textContent = t === 'dark' ? '☾' : '☀';
+      const meta = document.getElementById('meta-theme-color');
+      if (meta) meta.setAttribute('content', t === 'dark' ? '#000000' : '#fafafa');
+    }
+
+    const cur = document.documentElement.getAttribute('data-theme') || 'light';
+    syncViewportThemeIcon(cur);
+
+    function dispatchThemeToIframe(theme: string) {
+      if (iframe && iframe.contentWindow) {
+        try {
+          const win = iframe.contentWindow as any;
+          if (typeof win.setLightingPreset === 'function') {
+            win.setLightingPreset(theme);
+          }
+          win.postMessage({ type: 'SET_THEME', theme: theme }, '*');
+        } catch (e) {
+          // Cross-origin fallback
+          iframe.contentWindow.postMessage({ type: 'SET_THEME', theme: theme }, '*');
+        }
+      }
+    }
+
+    if (vpThemeBtn) {
+      vpThemeBtn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme') || 'light';
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('roadster-theme', next);
+        syncViewportThemeIcon(next);
+        dispatchThemeToIframe(next);
+      });
+    }
+
+    // Auto-focus iframe when loaded and on document click so keyboard works immediately
+    function focusIframe() {
+      if (iframe && iframe.contentWindow) {
+        try {
+          iframe.contentWindow.focus();
+        } catch (e) {}
+      }
+    }
+
+    if (iframe) {
+      iframe.addEventListener('load', () => {
+        const current = document.documentElement.getAttribute('data-theme') || 'light';
+        dispatchThemeToIframe(current);
+        focusIframe();
+      });
+    }
+
+    window.addEventListener('click', () => {
+      focusIframe();
+    });
+
+    // Forward keyboard events to iframe if user presses keys on outer page
+    window.addEventListener('keydown', (e) => {
+      // Don't forward if typing in input
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+      if (iframe && iframe.contentWindow) {
+        try {
+          const evt = new KeyboardEvent('keydown', {
+            key: e.key,
+            code: e.code,
+            shiftKey: e.shiftKey,
+            ctrlKey: e.ctrlKey,
+            altKey: e.altKey,
+            repeat: e.repeat,
+            bubbles: true
+          });
+          iframe.contentWindow.dispatchEvent(evt);
+        } catch (err) {}
+      }
+    });
+
+    window.addEventListener('keyup', (e) => {
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+      if (iframe && iframe.contentWindow) {
+        try {
+          const evt = new KeyboardEvent('keyup', {
+            key: e.key,
+            code: e.code,
+            shiftKey: e.shiftKey,
+            ctrlKey: e.ctrlKey,
+            altKey: e.altKey,
+            repeat: e.repeat,
+            bubbles: true
+          });
+          iframe.contentWindow.dispatchEvent(evt);
+        } catch (err) {}
+      }
+    });
+
+    // Listen to theme changes sent by the simulator inside iframe
+    window.addEventListener('message', (e) => {
+      if (e.data && e.data.type === 'THEME_CHANGED') {
+        const theme = e.data.theme === 'light' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('roadster-theme', theme);
+        syncViewportThemeIcon(theme);
+      }
+    });
+
+    // Fullscreen Toggle
+    if (fsBtn && iframe) {
+      fsBtn.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+          if (iframe.requestFullscreen) {
+            iframe.requestFullscreen();
+          }
+        } else {
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          }
+        }
+      });
+    }
+  </script>
+</Layout>

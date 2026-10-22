@@ -1,0 +1,385 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Tesla Roadster 2026 | Free 3D WebGL Hypercar Browser Game" 
+  description="Play the free 3D Tesla Roadster 2026 simulator online. Sub-0.6s 0-60 MPH, 4 cold-gas thrusters, 2G wall suction, drag strip, Mario Kart mountain circuit, and cyber combat."
+>
+  <!-- Hero Section strictly following Vercel Geist Design System -->
+  <section style="position: relative; overflow: hidden; padding: 6rem 1.5rem 5rem; text-align: center; border-bottom: 1px solid var(--hairline); background: var(--canvas);">
+    <!-- Subtle Hero Radial Glow using Vercel Tokens -->
+    <div style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); width: 850px; height: 400px; background: radial-gradient(ellipse at center, rgba(0, 112, 243, 0.12) 0%, rgba(121, 40, 202, 0.05) 45%, rgba(0, 0, 0, 0) 70%); pointer-events: none; z-index: 0;" aria-hidden="true"></div>
+    
+    <div style="position: relative; z-index: 1; max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+      <!-- Mono Eyebrow Badge (Geist Mono, 11px, 1px hairline border) -->
+      <div style="display: inline-flex; align-items: center; gap: 0.6rem; padding: 5px 14px; border-radius: 100px; background: var(--canvas-elevated); border: 1px solid var(--hairline); box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+        <span class="mono-eyebrow" style="color: var(--link);">SPACEX COLD-GAS THRUSTER PACKAGE</span>
+        <span style="color: var(--hairline);" aria-hidden="true">|</span>
+        <span class="mono-eyebrow" style="color: var(--ink);">0–60 MPH IN 0.58s</span>
+      </div>
+
+      <!-- Display XL Heading with tight tracking -->
+      <h1 class="display-xl" style="color: var(--ink);">
+        The Next-Gen <span class="hero-mesh-text">Roadster 2026</span> Simulator
+      </h1>
+
+      <!-- Body LG Subhead -->
+      <p class="body-lg" style="max-width: 680px; margin: 0 auto;">
+        Real-time 3D hypercar engineering simulator powered by Three.js. Experience procedural COPV cold-gas thrusters, 2G wall suction, high-slip counter-steer drifting, and the high-altitude Mario Kart mountain circuit.
+      </p>
+
+      <!-- Pill Marketing Action Buttons -->
+      <div style="display: flex; gap: 1rem; margin-top: 0.5rem; flex-wrap: wrap; justify-content: center;">
+        <a href="/play" class="btn-pill-primary" aria-label="Launch 3D Game Viewport">
+          <span>Launch Simulator</span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <a href="#comparison" class="btn-pill-secondary">
+          Compare Specs
+        </a>
+        <a href="#modes" class="btn-pill-secondary">
+          Explore Modes
+        </a>
+      </div>
+
+      <!-- Color Swatches Bar strictly following authentic Roadster paint & Vercel design -->
+      <div style="display: flex; align-items: center; gap: 0.85rem; margin-top: 1.25rem; padding: 6px 16px; border-radius: 100px; background: var(--canvas-elevated); border: 1px solid var(--hairline); font-size: 12px; color: var(--mute); flex-wrap: wrap; justify-content: center;">
+        <span class="mono-eyebrow" style="color: var(--ink);">Paint Finishes:</span>
+        <span style="display: inline-flex; align-items: center; gap: 5px;"><span style="width: 10px; height: 10px; border-radius: 50%; background: #ee0000; box-shadow: 0 0 4px rgba(238,0,0,0.4);"></span> Ultra Red</span>
+        <span style="display: inline-flex; align-items: center; gap: 5px;"><span style="width: 10px; height: 10px; border-radius: 50%; background: #0070f3; box-shadow: 0 0 4px rgba(0,112,243,0.4);"></span> Deep Blue</span>
+        <span style="display: inline-flex; align-items: center; gap: 5px;"><span style="width: 10px; height: 10px; border-radius: 50%; background: #00dfd8; box-shadow: 0 0 4px rgba(0,223,216,0.4);"></span> Cyan Glow</span>
+        <span style="display: inline-flex; align-items: center; gap: 5px;"><span style="width: 10px; height: 10px; border-radius: 50%; background: #ffffff; border: 1px solid #ccc;"></span> Pearl White</span>
+        <span style="display: inline-flex; align-items: center; gap: 5px;"><span style="width: 10px; height: 10px; border-radius: 50%; background: #171717; border: 1px solid #444;"></span> Stealth Black</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Feature Cards Section -->
+  <section id="features" style="padding: 5rem 1.5rem; max-width: 1180px; margin: 0 auto; width: 100%;">
+    <div style="text-align: center; margin-bottom: 3.5rem;">
+      <span class="mono-eyebrow" style="color: var(--link);">ENGINEERING CAPABILITIES</span>
+      <h2 class="heading-lg" style="margin-top: 0.35rem; color: var(--ink);">Superhuman Physics & Technology</h2>
+      <p class="body-md" style="margin-top: 0.5rem; color: var(--mute);">Engineered beyond the physical boundaries of conventional road cars.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.5rem;">
+      <!-- Feature 1: SpaceX Thrusters -->
+      <div class="vercel-card" style="padding: 2rem; display: flex; flex-direction: column;">
+        <div style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 8px; background: var(--link-soft-bg); color: var(--link); margin-bottom: 1.25rem;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+          </svg>
+        </div>
+        <div class="mono-eyebrow" style="color: var(--link); margin-bottom: 0.5rem;">SPACEX COPV THRUSTERS</div>
+        <h3 class="heading-md" style="margin-bottom: 0.5rem; color: var(--ink);">Quad Cold-Gas Boosters</h3>
+        <p class="body-md" style="color: var(--body); flex: 1;">
+          Composite Overwrapped Pressure Vessels (COPV) releasing nitrogen thruster plumes. Generates instant omni-directional burst force propelling 0 to 60 mph in under 0.6 seconds.
+        </p>
+      </div>
+
+      <!-- Feature 2: 2G Ground Suction -->
+      <div class="vercel-card" style="padding: 2rem; display: flex; flex-direction: column;">
+        <div style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 8px; background: rgba(0, 223, 216, 0.12); color: #008f88; margin-bottom: 1.25rem;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <div class="mono-eyebrow" style="color: #008f88; margin-bottom: 0.5rem;">AERODYNAMIC SUCTION</div>
+        <h3 class="heading-md" style="margin-bottom: 0.5rem; color: var(--ink);">2G Ground & Wall Suction</h3>
+        <p class="body-md" style="color: var(--body); flex: 1;">
+          Venturi undertray vacuum turbines generate over 2G downward force. Enables high-speed driving along curved 90° building surfaces and inverted ceiling bypasses without losing tire contact.
+        </p>
+      </div>
+
+      <!-- Feature 3: Mountain Circuit -->
+      <div class="vercel-card" style="padding: 2rem; display: flex; flex-direction: column;">
+        <div style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 8px; background: rgba(245, 166, 35, 0.12); color: var(--warning); margin-bottom: 1.25rem;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m8 3 4 8 5-5 5 15H2L8 3z"/>
+          </svg>
+        </div>
+        <div class="mono-eyebrow" style="color: var(--warning); margin-bottom: 0.5rem;">HIGH-ALTITUDE GP</div>
+        <h3 class="heading-md" style="margin-bottom: 0.5rem; color: var(--ink);">Mario Kart Mountain Circuit</h3>
+        <p class="body-md" style="color: var(--body); flex: 1;">
+          Ascend a procedural 42-meter alpine ribbon track complete with boost recharge strips, high-camber S-curves, snowcap crests, and dynamic rival hypercar AI competitors.
+        </p>
+      </div>
+
+      <!-- Feature 4: Cyber Combat Arena -->
+      <div class="vercel-card" style="padding: 2rem; display: flex; flex-direction: column;">
+        <div style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 8px; background: rgba(238, 0, 0, 0.1); color: var(--error); margin-bottom: 1.25rem;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="22" y1="12" x2="18" y2="12"/>
+            <line x1="6" y1="12" x2="2" y2="12"/>
+            <line x1="12" y1="6" x2="12" y2="2"/>
+            <line x1="12" y1="22" x2="12" y2="18"/>
+          </svg>
+        </div>
+        <div class="mono-eyebrow" style="color: var(--error); margin-bottom: 0.5rem;">ENERGY COMBAT</div>
+        <h3 class="heading-md" style="margin-bottom: 0.5rem; color: var(--ink);">Cyber Combat Arena</h3>
+        <p class="body-md" style="color: var(--body); flex: 1;">
+          High-voltage battle arena featuring energy orbs, EMP shockwave pulses, shield barriers, and intense vehicle demolition mechanics against aggressive drone units.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Spec Comparison Matrix -->
+  <section id="comparison" style="padding: 5rem 1.5rem; border-top: 1px solid var(--hairline); background: var(--canvas-elevated);">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <span class="mono-eyebrow" style="color: var(--link);">BENCHMARK MATRIX</span>
+        <h2 class="heading-lg" style="margin-top: 0.35rem; color: var(--ink);">Hypercar Performance Showdown</h2>
+        <p class="body-md" style="margin-top: 0.5rem; color: var(--mute);">Verified engineering specifications: Tesla Roadster 2026 vs World Class Hypercars.</p>
+      </div>
+
+      <div class="vercel-card" style="overflow-x: auto; border-radius: 8px;">
+        <table class="specs-table" aria-label="Hypercar Spec Comparison Table">
+          <thead>
+            <tr>
+              <th scope="col">Vehicle</th>
+              <th scope="col">0–60 MPH</th>
+              <th scope="col">Top Speed</th>
+              <th scope="col">1/4 Mile</th>
+              <th scope="col">Output (HP)</th>
+              <th scope="col">Reaction Thrusters</th>
+              <th scope="col">Wall Suction</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background: var(--link-soft-bg);">
+              <td style="font-weight: 700; color: var(--ink); display: flex; align-items: center; gap: 6px;">
+                <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--link);"></span>
+                Tesla Roadster 2026 (SpaceX)
+              </td>
+              <td class="highlight" style="font-weight: 700; color: var(--link);">0.58s</td>
+              <td class="highlight" style="font-weight: 700; color: var(--link);">>250+ MPH</td>
+              <td class="highlight" style="font-weight: 700; color: var(--link);">7.95s</td>
+              <td style="font-weight: 600;">1,800+ HP (Tri-Motor)</td>
+              <td class="highlight" style="color: var(--link); font-weight: 600;">4 COPV Cold-Gas</td>
+              <td class="highlight" style="color: var(--link); font-weight: 600;">Active 2G Vacuum</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 600;">Rimac Nevera</td>
+              <td>1.74s</td>
+              <td>258 MPH</td>
+              <td>8.25s</td>
+              <td>1,914 HP</td>
+              <td style="color: var(--mute);">None</td>
+              <td style="color: var(--mute);">Passive Aero</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 600;">Bugatti Tourbillon</td>
+              <td>2.00s</td>
+              <td>276 MPH</td>
+              <td>8.70s</td>
+              <td>1,800 HP (V16 Hybrid)</td>
+              <td style="color: var(--mute);">None</td>
+              <td style="color: var(--mute);">Passive Aero</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 600;">Porsche Taycan Turbo GT</td>
+              <td>2.10s</td>
+              <td>190 MPH</td>
+              <td>9.50s</td>
+              <td>1,019 HP</td>
+              <td style="color: var(--mute);">None</td>
+              <td style="color: var(--mute);">Passive Aero</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-top: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+        <span class="body-sm" style="color: var(--mute);">* Tesla Roadster 2026 specs enabled with SpaceX Package cold-gas thrusters and ground effect suction.</span>
+        <a href="/play" class="btn-pill-primary" style="height: 36px; padding: 0 16px; font-size: 13px;">Test In Simulator →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selectable Game Modes Grid Section -->
+  <section id="modes" style="padding: 5rem 1.5rem; max-width: 1180px; margin: 0 auto; width: 100%;">
+    <div style="text-align: center; margin-bottom: 3.5rem;">
+      <span class="mono-eyebrow" style="color: var(--link);">SELECTABLE SIMULATION MODES</span>
+      <h2 class="heading-lg" style="margin-top: 0.35rem; color: var(--ink);">Four Distinct Simulation Environments</h2>
+      <p class="body-md" style="margin-top: 0.5rem; color: var(--mute);">Switch modes seamlessly with key [M] without reloading the scene.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+      <!-- Mode 1: Free Roam Sandbox -->
+      <div class="vercel-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <span class="mono-eyebrow" style="color: var(--link); background: var(--link-soft-bg); padding: 2px 8px; border-radius: 4px;">MODE 01</span>
+            <span class="mono-eyebrow" style="color: var(--mute);">SANDBOX</span>
+          </div>
+          <h3 class="heading-md" style="margin-bottom: 0.65rem; color: var(--ink);">Open World Free Roam</h3>
+          <p class="body-md" style="margin-bottom: 1.5rem; color: var(--body);">
+            Full hypercar sandbox physics. Engage 4 SpaceX cold-gas thrusters, scale 90° building walls with 2G suction, and pull high-slip drifts.
+          </p>
+          <ul class="body-sm" style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2rem;">
+            <li style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--ink);" aria-hidden="true">✓</span> Quad Cold-Gas Decompression Audio</li>
+            <li style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--ink);" aria-hidden="true">✓</span> 90° Vertical Wall Climbing</li>
+            <li style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--ink);" aria-hidden="true">✓</span> Left-Ctrl High-Slip Drift Scoring</li>
+          </ul>
+        </div>
+        <a href="/play" class="btn-pill-secondary" style="width: 100%; justify-content: center;">Enter Free Roam</a>
+      </div>
+
+      <!-- Mode 2: 1/4 Mile Drag Strip -->
+      <div class="vercel-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <span class="mono-eyebrow" style="color: var(--error); background: rgba(238,0,0,0.1); padding: 2px 8px; border-radius: 4px;">MODE 02</span>
+            <span class="mono-eyebrow" style="color: var(--mute);">SPEED TRAP</span>
+          </div>
+          <h3 class="heading-md" style="margin-bottom: 0.65rem; color: var(--ink);">1/4 Mile Drag Strip</h3>
+          <p class="body-md" style="margin-bottom: 1.5rem; color: var(--body);">
+            Regulation NHRA drag duel with Bugatti Tourbillon, Rimac Nevera, and Porsche Taycan. Christmas tree staging lights with red-light detection.
+          </p>
+          <ul class="body-sm" style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2rem;">
+            <li style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--ink);" aria-hidden="true">✓</span> Christmas Tree Staging System</li>
+            <li style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--ink);" aria-hidden="true">✓</span> 3.5s Fixed Boost Power Meter</li>
+            <li style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--ink);" aria-hidden="true">✓</span> Reaction Time & Trap Speed Trap</li>
+          </ul>
+        </div>
+        <a href="/play" class="btn-pill-secondary" style="width: 100%; justify-content: center;">Launch Drag Race</a>
+      </div>
+
+      <!-- Mode 3: Mario Kart Mountain Circuit -->
+      <div class="vercel-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; border-color: #00dfd8; box-shadow: 0 2px 10px rgba(0, 223, 216, 0.12);">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <span class="mono-eyebrow" style="color: #008f88; background: rgba(0, 223, 216, 0.15); padding: 2px 8px; border-radius: 4px;">MODE 03</span>
+            <span class="mono-eyebrow" style="color: #008f88; font-weight: 600;">ALPINE GP</span>
+          </div>
+          <h3 class="heading-md" style="margin-bottom: 0.65rem; color: var(--ink);">Mountain Circuit GP</h3>
+          <p class="body-md" style="margin-bottom: 1.5rem; color: var(--body);">
+            Mario Kart-inspired 3D alpine ribbon circuit. Ascend the spiral alpine trail to the 42m snowcap peak, hit +50 MPH boost pads, and outpace 4 AI rivals.
+          </p>
+          <ul class="body-sm" style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2rem;">
+            <li style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--ink);" aria-hidden="true">✓</span> 42m Mountain Ascent & Snow Chute</li>
+            <li style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--ink);" aria-hidden="true">✓</span> Neon Boost Strips & Hazard Traps</li>
+            <li style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--ink);" aria-hidden="true">✓</span> Checkpoint Lap Telemetry</li>
+          </ul>
+        </div>
+        <a href="/play" class="btn-pill-primary" style="width: 100%; justify-content: center;">Start Mountain Circuit</a>
+      </div>
+
+      <!-- Mode 4: Cyber Combat Arena -->
+      <div class="vercel-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <span class="mono-eyebrow" style="color: var(--violet); background: rgba(121, 40, 202, 0.12); padding: 2px 8px; border-radius: 4px;">MODE 04</span>
+            <span class="mono-eyebrow" style="color: var(--mute);">SURVIVAL</span>
+          </div>
+          <h3 class="heading-md" style="margin-bottom: 0.65rem; color: var(--ink);">Cyber Combat Arena</h3>
+          <p class="body-md" style="margin-bottom: 1.5rem; color: var(--body);">
+            Survive waves of AI combatants in a high-tech enclosed grid arena. Collect energy canisters, trigger kinetic shockwave blasts, and defend your perimeter.
+          </p>
+          <ul class="body-sm" style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2rem;">
+            <li style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--ink);" aria-hidden="true">✓</span> Shockwave EMP Pulses</li>
+            <li style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--ink);" aria-hidden="true">✓</span> Kinetic Vehicle Demolition</li>
+            <li style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--ink);" aria-hidden="true">✓</span> High-Score Survival Waves</li>
+          </ul>
+        </div>
+        <a href="/play" class="btn-pill-secondary" style="width: 100%; justify-content: center;">Enter Combat Arena</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Telemetry & Controls Guide Section -->
+  <section id="controls" style="padding: 5rem 1.5rem; border-top: 1px solid var(--hairline); background: var(--canvas);">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <span class="mono-eyebrow" style="color: var(--link);">SIMULATOR TELEMETRY</span>
+        <h2 class="heading-lg" style="margin-top: 0.35rem; color: var(--ink);">Flight & Vehicle Controls Guide</h2>
+        <p class="body-md" style="margin-top: 0.5rem; color: var(--mute);">Full keyboard mapping, gamepad support, and on-screen touch telemetry HUD.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
+        <!-- Keyboard & Keybinds -->
+        <div class="vercel-card" style="padding: 2rem;">
+          <h3 class="heading-md" style="margin-bottom: 1.25rem; color: var(--ink); display: flex; align-items: center; gap: 0.5rem;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M6 16h.01M10 16h8"/>
+            </svg>
+            Keyboard Commands
+          </h3>
+          <div style="display: flex; flex-direction: column; gap: 0.85rem; font-size: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--hairline); padding-bottom: 0.5rem;">
+              <span class="body-md">Drive / Steer</span>
+              <div style="display: flex; gap: 4px;"><span class="kbd-pill">W</span><span class="kbd-pill">A</span><span class="kbd-pill">S</span><span class="kbd-pill">D</span> <span style="font-size: 12px; color: var(--mute); margin: 0 4px;">or</span> <span class="kbd-pill">↑</span><span class="kbd-pill">←</span><span class="kbd-pill">↓</span><span class="kbd-pill">→</span></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--hairline); padding-bottom: 0.5rem;">
+              <span class="body-md">SpaceX Thruster Boost</span>
+              <div><span class="kbd-pill" style="min-width: 60px;">Space</span></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--hairline); padding-bottom: 0.5rem;">
+              <span class="body-md">High-Slip Drift Mode</span>
+              <div><span class="kbd-pill" style="min-width: 72px;">Left Ctrl</span></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--hairline); padding-bottom: 0.5rem;">
+              <span class="body-md">2G Ground & Wall Suction</span>
+              <div><span class="kbd-pill">G</span></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--hairline); padding-bottom: 0.5rem;">
+              <span class="body-md">Switch Game Modes</span>
+              <div><span class="kbd-pill">M</span></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--hairline); padding-bottom: 0.5rem;">
+              <span class="body-md">Cycle Cameras (Cockpit / Chase / Top)</span>
+              <div><span class="kbd-pill">C</span></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span class="body-md">Reset Vehicle Position</span>
+              <div><span class="kbd-pill">R</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Telemetry & Physics Metrics -->
+        <div class="vercel-card" style="padding: 2rem;">
+          <h3 class="heading-md" style="margin-bottom: 1.25rem; color: var(--ink); display: flex; align-items: center; gap: 0.5rem;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 20v-6M6 20V10M18 20V4"/>
+            </svg>
+            Live Heads-Up Display Telemetry
+          </h3>
+          <div style="display: flex; flex-direction: column; gap: 0.85rem; font-size: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--hairline); padding-bottom: 0.5rem;">
+              <span class="body-md">Digital Speedometer</span>
+              <span class="mono-eyebrow" style="color: var(--link);">0 – 260+ MPH (Real Time)</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--hairline); padding-bottom: 0.5rem;">
+              <span class="body-md">G-Force Lateral Meter</span>
+              <span class="mono-eyebrow" style="color: var(--warning);">Tire Slip & G-Acceleration</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--hairline); padding-bottom: 0.5rem;">
+              <span class="body-md">COPV Nitrogen Pressure</span>
+              <span class="mono-eyebrow" style="color: #008f88;">Procedural Thruster Tank Level</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--hairline); padding-bottom: 0.5rem;">
+              <span class="body-md">Drift Combo Multiplier</span>
+              <span class="mono-eyebrow" style="color: var(--error);">1.0x – 10.0x Points Scale</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--hairline); padding-bottom: 0.5rem;">
+              <span class="body-md">Touch Controls</span>
+              <span class="mono-eyebrow" style="color: var(--ink);">Virtual Steering & Boost Buttons</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span class="body-md">Lighting Studio</span>
+              <span class="mono-eyebrow" style="color: var(--mute);">Sunlight / Cyber Midnight / Neon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

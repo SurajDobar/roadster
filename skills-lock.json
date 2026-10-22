@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "threejs-fundamentals": {
+      "source": "cloudai-x/threejs-skills",
+      "sourceType": "github",
+      "skillPath": "skills/threejs-fundamentals/SKILL.md",
+      "computedHash": "01b18e381a820a257d2a2ecdaedac3ec36e8f2cac87810e8cc1b42800e3d2bb3"
+    },
+    "threejs-geometry": {
+      "source": "cloudai-x/threejs-skills",
+      "sourceType": "github",
+      "skillPath": "skills/threejs-geometry/SKILL.md",
+      "computedHash": "67e6fa98e6c951e164f2e17df73cd5cfc53fc655693b4cef006d67a1f5edffe6"
+    }
+  }
+}

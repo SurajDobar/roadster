@@ -1,0 +1,490 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+}
+
+const { title, description, canonical = 'https://roadster2026.com/' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fafafa" id="meta-theme-color" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+
+  <!-- Favicon & Web App Manifest -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="apple-mobile-web-app-title" content="Roadster" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:site_name" content="Tesla Roadster 2026 Game" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+
+  <!-- Fonts: Geist, Geist Mono, Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style is:global>
+    :root {
+      /* Vercel Geist Light Studio Tokens */
+      --primary: #171717;
+      --on-primary: #ffffff;
+      --ink: #171717;
+      --body: #444444;
+      --mute: #666666;
+      --faint: #8e8e8e;
+      --hairline: #e5e5e5;
+      --hairline-soft: #f0f0f0;
+      --canvas: #fafafa;
+      --canvas-elevated: #ffffff;
+      --canvas-sunken: #f5f5f5;
+      --nav-bg: rgba(250, 250, 250, 0.82);
+      --link: #0070f3;
+      --link-deep: #0761d1;
+      --link-soft: #d3e5ff;
+      --link-soft-bg: rgba(0, 112, 243, 0.08);
+      --error: #ee0000;
+      --error-deep: #c50000;
+      --warning: #f5a623;
+      --success: #0070f3;
+      --violet: #7928ca;
+      --cyan: #00dfd8;
+      --pink: #ff0080;
+      --accent-badge: #000000;
+      --accent-badge-text: #ffffff;
+
+      /* Mesh Hero Gradients */
+      --grad-develop-start: #007cf0;
+      --grad-develop-end: #00dfd8;
+      --grad-preview-start: #7928ca;
+      --grad-preview-end: #ff0080;
+      --grad-ship-start: #ff4d4d;
+      --grad-ship-end: #f9cb28;
+    }
+
+    /* Vercel Geist Dark Studio Tokens */
+    html[data-theme="dark"] {
+      --primary: #ffffff;
+      --on-primary: #000000;
+      --ink: #ededed;
+      --body: #a1a1a1;
+      --mute: #737373;
+      --faint: #525252;
+      --hairline: #262626;
+      --hairline-soft: #1c1c1c;
+      --canvas: #000000;
+      --canvas-elevated: #0a0a0a;
+      --canvas-sunken: #111111;
+      --nav-bg: rgba(0, 0, 0, 0.82);
+      --link: #3291ff;
+      --link-deep: #0070f3;
+      --link-soft: rgba(0, 112, 243, 0.18);
+      --link-soft-bg: rgba(50, 145, 255, 0.12);
+      --error: #ff4d4d;
+      --accent-badge: #ffffff;
+      --accent-badge-text: #000000;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--canvas);
+      color: var(--ink);
+      font-family: Geist, Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Vercel Typography Scale */
+    .display-xl {
+      font-size: clamp(2.5rem, 6vw, 3.75rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+      text-wrap: balance;
+    }
+
+    .heading-lg {
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.035em;
+      text-wrap: balance;
+    }
+
+    .heading-md {
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+    }
+
+    .mono-eyebrow {
+      font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 16px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .body-lg {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 26px;
+      letter-spacing: -0.01em;
+      color: var(--body);
+    }
+
+    .body-md {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+      letter-spacing: -0.005em;
+      color: var(--body);
+    }
+
+    .body-sm {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: 0;
+      color: var(--mute);
+    }
+
+    /* Pill Buttons (100px rounded) */
+    .btn-pill-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      height: 40px;
+      padding: 0 18px;
+      background: var(--ink);
+      color: var(--on-primary);
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      border: 1px solid var(--ink);
+      transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease;
+      cursor: pointer;
+    }
+    .btn-pill-primary:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+    .btn-pill-primary:active {
+      transform: translateY(0);
+    }
+
+    .btn-pill-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      height: 40px;
+      padding: 0 18px;
+      background: var(--canvas-elevated);
+      color: var(--ink);
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      border: 1px solid var(--hairline);
+      transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+      cursor: pointer;
+    }
+    .btn-pill-secondary:hover {
+      border-color: var(--ink);
+      transform: translateY(-1px);
+    }
+
+    /* Vercel Square Nav Buttons (6px rounded) */
+    .btn-nav-square {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 32px;
+      padding: 0 14px;
+      border-radius: 6px;
+      background: var(--ink);
+      color: var(--on-primary);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      border: 1px solid var(--ink);
+      transition: opacity 0.15s ease, transform 0.15s ease;
+      cursor: pointer;
+    }
+    .btn-nav-square:hover {
+      opacity: 0.9;
+      transform: translateY(-0.5px);
+    }
+
+    .btn-theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      background: var(--canvas-elevated);
+      color: var(--ink);
+      border: 1px solid var(--hairline);
+      cursor: pointer;
+      font-size: 14px;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+    .btn-theme-toggle:hover {
+      border-color: var(--ink);
+    }
+
+    /* Vercel Clean Card Container */
+    .vercel-card {
+      background: var(--canvas-elevated);
+      border: 1px solid var(--hairline);
+      border-radius: 8px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+    }
+    .vercel-card:hover {
+      border-color: var(--ink);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .nav-link {
+      color: var(--body);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.15s ease;
+      padding: 4px 6px;
+    }
+    .nav-link:hover {
+      color: var(--ink);
+    }
+
+    /* Tri-Color Mesh Hero Gradient */
+    .hero-mesh-text {
+      background: linear-gradient(135deg, var(--grad-develop-start) 0%, var(--grad-preview-start) 50%, var(--grad-ship-start) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Interactive Comparison Matrix Table */
+    .specs-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 14px;
+    }
+    .specs-table th, .specs-table td {
+      padding: 14px 18px;
+      text-align: left;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .specs-table th {
+      font-family: "Geist Mono", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--mute);
+      background: var(--canvas);
+    }
+    .specs-table tr:hover td {
+      background: var(--canvas-sunken);
+    }
+    .specs-table td.highlight {
+      font-weight: 600;
+      color: var(--link);
+    }
+
+    /* Control key pills */
+    .kbd-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 28px;
+      height: 24px;
+      padding: 0 6px;
+      background: var(--canvas-sunken);
+      border: 1px solid var(--hairline);
+      border-bottom-width: 2px;
+      border-radius: 4px;
+      font-family: "Geist Mono", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+
+  <script is:inline>
+    // Immediate Theme Initialization to avoid Flash of Unstyled Content
+    (function() {
+      const savedTheme = localStorage.getItem('roadster-theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      const meta = document.getElementById('meta-theme-color');
+      if (meta) meta.setAttribute('content', savedTheme === 'dark' ? '#000000' : '#fafafa');
+    })();
+  </script>
+</head>
+<body>
+  <!-- Vercel Nav Chrome Header -->
+  <header style="border-bottom: 1px solid var(--hairline); position: sticky; top: 0; z-index: 50; background: var(--nav-bg); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0.75rem 1.5rem; display: flex; align-items: center; justify-content: space-between;">
+      <a href="/" style="display: flex; align-items: center; gap: 0.625rem; text-decoration: none; color: var(--ink);" aria-label="Tesla Roadster 2026 Home">
+        <!-- Vercel Triangle Glyph -->
+        <svg width="18" height="18" viewBox="0 0 76 65" fill="currentColor">
+          <path d="M37.5274 0L75.0548 65H0L37.5274 0Z" />
+        </svg>
+        <span style="font-weight: 600; letter-spacing: -0.4px; font-size: 15px;">ROADSTER <span style="color: var(--link);" translate="no">2026</span></span>
+      </a>
+
+      <nav style="display: flex; align-items: center; gap: 1.5rem;" aria-label="Primary navigation">
+        <a href="/" class="nav-link">Overview</a>
+        <a href="/#features" class="nav-link">Features</a>
+        <a href="/#modes" class="nav-link">Modes</a>
+        <a href="/#comparison" class="nav-link">Specs</a>
+        <a href="/#controls" class="nav-link">Controls</a>
+        
+        <!-- Light / Dark Mode Toggle Button with crisp icon -->
+        <button id="theme-toggle-btn" class="btn-theme-toggle" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+          <span id="theme-icon">☀</span>
+        </button>
+
+        <a href="/play" class="btn-nav-square">Play Simulator</a>
+      </nav>
+    </div>
+  </header>
+
+  <main style="flex: 1;" id="main-content">
+    <slot />
+  </main>
+
+  <!-- Vercel Clean Footer -->
+  <footer style="border-top: 1px solid var(--hairline); padding: 3.5rem 1.5rem 2.5rem; background: var(--canvas-elevated); font-size: 13px; color: var(--mute);">
+    <div style="max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--ink); font-weight: 600; font-size: 15px;">
+            <svg width="16" height="16" viewBox="0 0 76 65" fill="currentColor">
+              <path d="M37.5274 0L75.0548 65H0L37.5274 0Z" />
+            </svg>
+            <span>Tesla Roadster 2026 Simulator</span>
+          </div>
+          <p class="body-sm" style="margin-top: 0.5rem; max-width: 320px;">
+            Next-generation 3D WebGL hypercar engineering simulator featuring real-time physics, SpaceX thruster dynamics, and multiplayer combat.
+          </p>
+        </div>
+
+        <div>
+          <span class="mono-eyebrow" style="color: var(--ink); display: block; margin-bottom: 0.75rem;">Navigation</span>
+          <nav style="display: flex; flex-direction: column; gap: 0.5rem;" aria-label="Footer quick links">
+            <a href="/" class="nav-link" style="padding: 0;">Overview</a>
+            <a href="/#features" class="nav-link" style="padding: 0;">SpaceX Thrusters</a>
+            <a href="/#modes" class="nav-link" style="padding: 0;">Mountain Circuit & Arenas</a>
+            <a href="/#comparison" class="nav-link" style="padding: 0;">Hypercar Benchmark Matrix</a>
+            <a href="/#controls" class="nav-link" style="padding: 0;">Telemetry & Controls</a>
+          </nav>
+        </div>
+
+        <div>
+          <span class="mono-eyebrow" style="color: var(--ink); display: block; margin-bottom: 0.75rem;">Controls Cheat-Sheet</span>
+          <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 12px; font-family: 'Geist Mono', monospace;">
+            <div><span class="kbd-pill">W</span> / <span class="kbd-pill">S</span> Accelerate / Brake</div>
+            <div><span class="kbd-pill">Space</span> SpaceX Cold-Gas Thrusters</div>
+            <div><span class="kbd-pill">Left-Ctrl</span> High-Slip Drift</div>
+            <div><span class="kbd-pill">G</span> 2G Wall & Ceiling Suction</div>
+            <div><span class="kbd-pill">M</span> Toggle Game Modes</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid var(--hairline-soft); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <p class="body-sm" translate="no">Designed strictly to Vercel Geist Design Tokens & Web Interface Guidelines.</p>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <span class="mono-eyebrow" style="color: var(--link);">0–60 MPH in 0.58s</span>
+          <span style="color: var(--hairline);" aria-hidden="true">•</span>
+          <span class="mono-eyebrow" style="color: var(--mute);">Sub-8.0s Quarter Mile</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const themeBtn = document.getElementById('theme-toggle-btn');
+    const themeIcon = document.getElementById('theme-icon');
+    const metaThemeColor = document.getElementById('meta-theme-color');
+
+    function updateThemeUI(t: string) {
+      if (themeIcon) themeIcon.textContent = t === 'dark' ? '☾' : '☀';
+      if (metaThemeColor) metaThemeColor.setAttribute('content', t === 'dark' ? '#000000' : '#fafafa');
+    }
+
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    updateThemeUI(currentTheme);
+
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const cur = document.documentElement.getAttribute('data-theme') || 'light';
+        const next = cur === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('roadster-theme', next);
+        updateThemeUI(next);
+      });
+    }
+
+    // Sync theme if changed by another tab or frame
+    window.addEventListener('storage', (e) => {
+      if (e.key === 'roadster-theme' && e.newValue) {
+        document.documentElement.setAttribute('data-theme', e.newValue);
+        updateThemeUI(e.newValue);
+      }
+    });
+  </script>
+</body>
+</html>
