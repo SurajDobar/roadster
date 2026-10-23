@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://roadster2026.com',
+  site: 'https://roadster-play.vercel.app',
   output: 'static'
 });

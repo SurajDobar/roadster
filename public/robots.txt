@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://roadster2026.com/sitemap.xml
+Sitemap: https://roadster-play.vercel.app/sitemap.xml

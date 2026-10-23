@@ -3,19 +3,35 @@ interface Props {
   title: string;
   description: string;
   canonical?: string;
+  keywords?: string;
+  ogImage?: string;
 }
 
-const { title, description, canonical = 'https://roadster2026.com/' } = Astro.props;
+const {
+  title,
+  description,
+  canonical = 'https://roadster-play.vercel.app/',
+  keywords = '3D Tesla Roadster Game, Tesla Roadster game, Roadster game, Tesla Roadster driving game, Tesla Roadster open world game, play Tesla Roadster online, webgl car game, hypercar simulator',
+  ogImage = 'https://roadster-play.vercel.app/og-image.png'
+} = Astro.props;
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 ---
 
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
+<meta name="google-site-verification" content="Pq1K2d7jnfoiB4Yo97FwFed6FULnOyvp3zvXRwydwFM" />
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#fafafa" id="meta-theme-color" />
   <title>{title}</title>
+  <meta name="title" content={title} />
   <meta name="description" content={description} />
+  <meta name="keywords" content={keywords} />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="author" content="Tesla Roadster 3D Game" />
   <link rel="canonical" href={canonical} />
 
   <!-- Favicon & Web App Manifest -->
@@ -26,17 +42,39 @@ const { title, description, canonical = 'https://roadster2026.com/' } = Astro.pr
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="apple-mobile-web-app-title" content="Roadster" />
 
-  <!-- Open Graph -->
+  <!-- Open Graph / Facebook / Discord -->
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="3D Tesla Roadster Game" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonical} />
-  <meta property="og:site_name" content="Tesla Roadster 2026 Game" />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:secure_url" content={ogImage} />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="3D Tesla Roadster Game - Play Tesla Roadster Driving Game Online" />
+  <meta property="og:locale" content="en_US" />
 
-  <!-- Twitter Card -->
+  <!-- Twitter / X Cards -->
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content={canonical} />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+  <meta name="twitter:image:alt" content="3D Tesla Roadster Game - Play Online" />
+
+  <!-- Structured Data: WebSite Schema -->
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "3D Tesla Roadster Game",
+    "alternateName": ["Tesla Roadster Game", "Roadster Game", "Tesla Roadster Driving Game", "Tesla Roadster Open World Game"],
+    "url": "https://roadster-play.vercel.app/",
+    "description": "Play the free 3D Tesla Roadster game online. High-speed Tesla Roadster driving game featuring SpaceX cold-gas thrusters, open world sandbox, drag strip racing, and alpine mountain circuit."
+  }
+  </script>
 
   <!-- Fonts: Geist, Geist Mono, Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -297,6 +335,29 @@ const { title, description, canonical = 'https://roadster2026.com/' } = Astro.pr
     .nav-link:hover {
       color: var(--ink);
     }
+    .nav-link.active {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .mobile-drawer {
+      display: none;
+      border-top: 1px solid var(--hairline);
+      background: var(--canvas-elevated);
+      transition: all 0.2s ease;
+    }
+    .mobile-drawer.open {
+      display: block !important;
+    }
+
+    @media (max-width: 960px) {
+      .desktop-nav {
+        display: none !important;
+      }
+      .mobile-nav-controls {
+        display: flex !important;
+      }
+    }
 
     /* Tri-Color Mesh Hero Gradient */
     .hero-mesh-text {
@@ -352,6 +413,77 @@ const { title, description, canonical = 'https://roadster2026.com/' } = Astro.pr
       color: var(--ink);
     }
 
+    /* FAQ Accordion Styling (Strict Vercel Geist System) */
+    .faq-accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .faq-item {
+      background: var(--canvas-elevated);
+      border: 1px solid var(--hairline);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+    .faq-item:hover {
+      border-color: var(--ink);
+    }
+    .faq-item[open] {
+      border-color: var(--link);
+      box-shadow: 0 4px 16px rgba(0, 112, 243, 0.06);
+    }
+    .faq-trigger {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 1.5rem;
+      font-size: 15.5px;
+      font-weight: 600;
+      color: var(--ink);
+      cursor: pointer;
+      list-style: none;
+      user-select: none;
+      gap: 1rem;
+      transition: color 0.15s ease;
+    }
+    .faq-trigger::-webkit-details-marker {
+      display: none;
+    }
+    .faq-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--canvas-sunken);
+      border: 1px solid var(--hairline);
+      font-family: monospace;
+      font-size: 15px;
+      line-height: 1;
+      color: var(--mute);
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.15s ease, color 0.15s ease;
+      flex-shrink: 0;
+    }
+    .faq-item[open] .faq-icon {
+      transform: rotate(45deg);
+      background: var(--link-soft-bg);
+      color: var(--link);
+      border-color: var(--link);
+    }
+    .faq-content {
+      padding: 0 1.5rem 1.35rem;
+      color: var(--body);
+      font-size: 14.5px;
+      line-height: 1.65;
+      border-top: 1px solid var(--hairline-soft);
+      padding-top: 1rem;
+    }
+
     @media (prefers-reduced-motion: reduce) {
       * {
         animation-duration: 0.01ms !important;
@@ -375,8 +507,8 @@ const { title, description, canonical = 'https://roadster2026.com/' } = Astro.pr
 <body>
   <!-- Vercel Nav Chrome Header -->
   <header style="border-bottom: 1px solid var(--hairline); position: sticky; top: 0; z-index: 50; background: var(--nav-bg); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);">
-    <div style="max-width: 1180px; margin: 0 auto; padding: 0.75rem 1.5rem; display: flex; align-items: center; justify-content: space-between;">
-      <a href="/" style="display: flex; align-items: center; gap: 0.625rem; text-decoration: none; color: var(--ink);" aria-label="Tesla Roadster 2026 Home">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0.75rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem;">
+      <a href="/" style="display: flex; align-items: center; gap: 0.625rem; text-decoration: none; color: var(--ink); flex-shrink: 0;" aria-label="Tesla Roadster 2026 Home">
         <!-- Vercel Triangle Glyph -->
         <svg width="18" height="18" viewBox="0 0 76 65" fill="currentColor">
           <path d="M37.5274 0L75.0548 65H0L37.5274 0Z" />
@@ -384,12 +516,15 @@ const { title, description, canonical = 'https://roadster2026.com/' } = Astro.pr
         <span style="font-weight: 600; letter-spacing: -0.4px; font-size: 15px;">ROADSTER <span style="color: var(--link);" translate="no">2026</span></span>
       </a>
 
-      <nav style="display: flex; align-items: center; gap: 1.5rem;" aria-label="Primary navigation">
-        <a href="/" class="nav-link">Overview</a>
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav" style="display: flex; align-items: center; gap: 1.15rem;" aria-label="Primary navigation">
+        <a href="/" class={`nav-link ${currentPath === '/' ? 'active' : ''}`}>Overview</a>
         <a href="/#features" class="nav-link">Features</a>
         <a href="/#modes" class="nav-link">Modes</a>
-        <a href="/#comparison" class="nav-link">Specs</a>
-        <a href="/#controls" class="nav-link">Controls</a>
+        <a href="/about" class={`nav-link ${currentPath === '/about' ? 'active' : ''}`}>About Us</a>
+        <a href="/contact" class={`nav-link ${currentPath === '/contact' ? 'active' : ''}`}>Contact Us</a>
+        <a href="/privacy" class={`nav-link ${currentPath === '/privacy' ? 'active' : ''}`}>Privacy</a>
+        <a href="/terms" class={`nav-link ${currentPath === '/terms' ? 'active' : ''}`}>Terms</a>
         
         <!-- Light / Dark Mode Toggle Button with crisp icon -->
         <button id="theme-toggle-btn" class="btn-theme-toggle" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
@@ -398,6 +533,32 @@ const { title, description, canonical = 'https://roadster2026.com/' } = Astro.pr
 
         <a href="/play" class="btn-nav-square">Play Simulator</a>
       </nav>
+
+      <!-- Mobile Navigation Controls -->
+      <div class="mobile-nav-controls" style="display: none; align-items: center; gap: 0.5rem;">
+        <button id="mobile-theme-toggle-btn" class="btn-theme-toggle" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+          <span id="mobile-theme-icon">☀</span>
+        </button>
+        <button id="mobile-menu-toggle" class="btn-theme-toggle" title="Toggle Navigation Menu" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span id="mobile-menu-icon" style="font-size: 16px; line-height: 1;">☰</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-drawer" class="mobile-drawer">
+      <div style="display: flex; flex-direction: column; gap: 0.6rem; padding: 1rem 1.5rem 1.5rem;">
+        <a href="/" class={`nav-link ${currentPath === '/' ? 'active' : ''}`} style="padding: 0.35rem 0;">Overview</a>
+        <a href="/#features" class="nav-link" style="padding: 0.35rem 0;">Features &amp; Physics</a>
+        <a href="/#modes" class="nav-link" style="padding: 0.35rem 0;">Tesla Roadster Open World Modes</a>
+        <a href="/about" class={`nav-link ${currentPath === '/about' ? 'active' : ''}`} style="padding: 0.35rem 0;">About Us</a>
+        <a href="/contact" class={`nav-link ${currentPath === '/contact' ? 'active' : ''}`} style="padding: 0.35rem 0;">Contact Us</a>
+        <a href="/privacy" class={`nav-link ${currentPath === '/privacy' ? 'active' : ''}`} style="padding: 0.35rem 0;">Privacy Policy</a>
+        <a href="/terms" class={`nav-link ${currentPath === '/terms' ? 'active' : ''}`} style="padding: 0.35rem 0;">Terms &amp; Conditions</a>
+        <div style="padding-top: 0.75rem; border-top: 1px solid var(--hairline-soft); margin-top: 0.35rem;">
+          <a href="/play" class="btn-pill-primary" style="width: 100%; text-align: center; justify-content: center; height: 38px;">Play Simulator Now →</a>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -407,45 +568,89 @@ const { title, description, canonical = 'https://roadster2026.com/' } = Astro.pr
 
   <!-- Vercel Clean Footer -->
   <footer style="border-top: 1px solid var(--hairline); padding: 3.5rem 1.5rem 2.5rem; background: var(--canvas-elevated); font-size: 13px; color: var(--mute);">
-    <div style="max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem;">
-      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem;">
-        <div>
+    <div style="max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2.5rem; align-items: flex-start;">
+        
+        <!-- Column 1: Brand & Simulation Summary -->
+        <div style="max-width: 320px;">
           <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--ink); font-weight: 600; font-size: 15px;">
             <svg width="16" height="16" viewBox="0 0 76 65" fill="currentColor">
               <path d="M37.5274 0L75.0548 65H0L37.5274 0Z" />
             </svg>
-            <span>Tesla Roadster 2026 Simulator</span>
+            <span>3D Tesla Roadster Game</span>
           </div>
-          <p class="body-sm" style="margin-top: 0.5rem; max-width: 320px;">
-            Next-generation 3D WebGL hypercar engineering simulator featuring real-time physics, SpaceX thruster dynamics, and multiplayer combat.
+          <p class="body-sm" style="margin-top: 0.75rem; line-height: 1.6;">
+            Next-generation 3D Tesla Roadster game and WebGL driving simulator. Featuring Three.js physics, SpaceX cold-gas thruster plumes, 2G wall suction, open world sandbox exploration, and 1/4 mile drag racing.
           </p>
+          <div style="margin-top: 1.25rem;">
+            <a href="/play" class="btn-pill-primary" style="height: 32px; padding: 0 14px; font-size: 12px;">Launch Game Viewport →</a>
+          </div>
         </div>
 
+        <!-- Column 2: Simulation & Track Links -->
         <div>
-          <span class="mono-eyebrow" style="color: var(--ink); display: block; margin-bottom: 0.75rem;">Navigation</span>
-          <nav style="display: flex; flex-direction: column; gap: 0.5rem;" aria-label="Footer quick links">
-            <a href="/" class="nav-link" style="padding: 0;">Overview</a>
-            <a href="/#features" class="nav-link" style="padding: 0;">SpaceX Thrusters</a>
-            <a href="/#modes" class="nav-link" style="padding: 0;">Mountain Circuit & Arenas</a>
+          <span class="mono-eyebrow" style="color: var(--ink); display: block; margin-bottom: 0.75rem;">Simulation</span>
+          <nav style="display: flex; flex-direction: column; gap: 0.5rem;" aria-label="Footer simulation links">
+            <a href="/" class="nav-link" style="padding: 0;">Overview &amp; Showcase</a>
+            <a href="/#features" class="nav-link" style="padding: 0;">SpaceX Thruster Package</a>
+            <a href="/#modes" class="nav-link" style="padding: 0;">Open World Free Roam</a>
             <a href="/#comparison" class="nav-link" style="padding: 0;">Hypercar Benchmark Matrix</a>
-            <a href="/#controls" class="nav-link" style="padding: 0;">Telemetry & Controls</a>
+            <a href="/#controls" class="nav-link" style="padding: 0;">Telemetry &amp; Controls</a>
+            <a href="/#faq" class="nav-link" style="padding: 0;">FAQ</a>
           </nav>
         </div>
 
+        <!-- Column 3: Information & Pages (MPA Routes) -->
+        <div>
+          <span class="mono-eyebrow" style="color: var(--ink); display: block; margin-bottom: 0.75rem;">Company &amp; Team</span>
+          <nav style="display: flex; flex-direction: column; gap: 0.5rem;" aria-label="Footer information links">
+            <a href="/about" class={`nav-link ${currentPath === '/about' ? 'active' : ''}`} style="padding: 0; font-weight: 500;">About Us</a>
+            <a href="/contact" class={`nav-link ${currentPath === '/contact' ? 'active' : ''}`} style="padding: 0; font-weight: 500;">Contact Us</a>
+            <a href="/about" class="nav-link" style="padding: 0;">Web Architecture &amp; Tech</a>
+            <a href="/contact" class="nav-link" style="padding: 0;">Troubleshooting &amp; Support</a>
+            <a href="/play" class="nav-link" style="padding: 0; color: var(--link); font-weight: 600;">Play Simulator</a>
+          </nav>
+        </div>
+
+        <!-- Column 4: Legal & Policies (MPA Routes) -->
+        <div>
+          <span class="mono-eyebrow" style="color: var(--ink); display: block; margin-bottom: 0.75rem;">Legal &amp; Policies</span>
+          <nav style="display: flex; flex-direction: column; gap: 0.5rem;" aria-label="Footer legal links">
+            <a href="/privacy" class={`nav-link ${currentPath === '/privacy' ? 'active' : ''}`} style="padding: 0; font-weight: 500;">Privacy Policy</a>
+            <a href="/terms" class={`nav-link ${currentPath === '/terms' ? 'active' : ''}`} style="padding: 0; font-weight: 500;">Terms &amp; Conditions</a>
+            <a href="/privacy" class="nav-link" style="padding: 0;">Browser Storage &amp; Saves</a>
+            <a href="/terms" class="nav-link" style="padding: 0;">Fan Project Disclaimer</a>
+          </nav>
+        </div>
+
+        <!-- Column 5: Controls Cheat-Sheet -->
         <div>
           <span class="mono-eyebrow" style="color: var(--ink); display: block; margin-bottom: 0.75rem;">Controls Cheat-Sheet</span>
           <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 12px; font-family: 'Geist Mono', monospace;">
             <div><span class="kbd-pill">W</span> / <span class="kbd-pill">S</span> Accelerate / Brake</div>
-            <div><span class="kbd-pill">Space</span> SpaceX Cold-Gas Thrusters</div>
+            <div><span class="kbd-pill">Space</span> SpaceX Thruster Burst</div>
             <div><span class="kbd-pill">Left-Ctrl</span> High-Slip Drift</div>
-            <div><span class="kbd-pill">G</span> 2G Wall & Ceiling Suction</div>
+            <div><span class="kbd-pill">G</span> 2G Wall &amp; Ceiling Suction</div>
             <div><span class="kbd-pill">M</span> Toggle Game Modes</div>
           </div>
         </div>
+
       </div>
 
+      <!-- Legal Sub-Footer Bar -->
       <div style="border-top: 1px solid var(--hairline-soft); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-        <p class="body-sm" translate="no">Designed strictly to Vercel Geist Design Tokens & Web Interface Guidelines.</p>
+        <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+          <p class="body-sm" translate="no">© 2026 3D Tesla Roadster Game. Independent fan simulation project.</p>
+          <div style="display: flex; align-items: center; gap: 0.75rem; font-size: 12px;">
+            <a href="/about" class="nav-link" style="padding: 0; font-size: 12px;">About Us</a>
+            <span style="color: var(--hairline);" aria-hidden="true">•</span>
+            <a href="/contact" class="nav-link" style="padding: 0; font-size: 12px;">Contact Us</a>
+            <span style="color: var(--hairline);" aria-hidden="true">•</span>
+            <a href="/privacy" class="nav-link" style="padding: 0; font-size: 12px;">Privacy Policy</a>
+            <span style="color: var(--hairline);" aria-hidden="true">•</span>
+            <a href="/terms" class="nav-link" style="padding: 0; font-size: 12px;">Terms &amp; Conditions</a>
+          </div>
+        </div>
         <div style="display: flex; align-items: center; gap: 1rem;">
           <span class="mono-eyebrow" style="color: var(--link);">0–60 MPH in 0.58s</span>
           <span style="color: var(--hairline);" aria-hidden="true">•</span>
@@ -458,23 +663,43 @@ const { title, description, canonical = 'https://roadster2026.com/' } = Astro.pr
   <script>
     const themeBtn = document.getElementById('theme-toggle-btn');
     const themeIcon = document.getElementById('theme-icon');
+    const mobileThemeBtn = document.getElementById('mobile-theme-toggle-btn');
+    const mobileThemeIcon = document.getElementById('mobile-theme-icon');
+    const mobileMenuBtn = document.getElementById('mobile-menu-toggle');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const mobileMenuIcon = document.getElementById('mobile-menu-icon');
     const metaThemeColor = document.getElementById('meta-theme-color');
 
     function updateThemeUI(t: string) {
       if (themeIcon) themeIcon.textContent = t === 'dark' ? '☾' : '☀';
+      if (mobileThemeIcon) mobileThemeIcon.textContent = t === 'dark' ? '☾' : '☀';
       if (metaThemeColor) metaThemeColor.setAttribute('content', t === 'dark' ? '#000000' : '#fafafa');
     }
 
     const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
     updateThemeUI(currentTheme);
 
+    function toggleTheme() {
+      const cur = document.documentElement.getAttribute('data-theme') || 'light';
+      const next = cur === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('roadster-theme', next);
+      updateThemeUI(next);
+    }
+
     if (themeBtn) {
-      themeBtn.addEventListener('click', () => {
-        const cur = document.documentElement.getAttribute('data-theme') || 'light';
-        const next = cur === 'light' ? 'dark' : 'light';
-        document.documentElement.setAttribute('data-theme', next);
-        localStorage.setItem('roadster-theme', next);
-        updateThemeUI(next);
+      themeBtn.addEventListener('click', toggleTheme);
+    }
+
+    if (mobileThemeBtn) {
+      mobileThemeBtn.addEventListener('click', toggleTheme);
+    }
+
+    if (mobileMenuBtn && mobileDrawer) {
+      mobileMenuBtn.addEventListener('click', () => {
+        const isOpen = mobileDrawer.classList.toggle('open');
+        mobileMenuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        if (mobileMenuIcon) mobileMenuIcon.textContent = isOpen ? '✕' : '☰';
       });
     }
 

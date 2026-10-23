@@ -1,0 +1,240 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="About Us | 3D Tesla Roadster Game & WebGL Simulator Project" 
+  description="Discover the story, mission, and Three.js physics behind the 3D Tesla Roadster Game. An independent WebGL simulation honoring hypercar innovation and aerospace engineering."
+  canonical="https://roadster-play.vercel.app/about"
+  keywords="About 3D Tesla Roadster Game, Tesla Roadster simulation project, WebGL car physics, Three.js racing game, SpaceX thruster simulation, Roadster game team, 3D hypercar engineering"
+>
+  <!-- Schema.org Structured Data: AboutPage & Organization -->
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About the 3D Tesla Roadster Game",
+    "url": "https://roadster-play.vercel.app/about",
+    "description": "The story, mission, and real-time WebGL physics engine behind the 3D Tesla Roadster driving simulator.",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "3D Tesla Roadster Game Project",
+      "url": "https://roadster-play.vercel.app/",
+      "logo": "https://roadster-play.vercel.app/og-image.png",
+      "foundingDate": "2026",
+      "description": "An independent open-web engineering initiative building high-performance browser simulations of next-generation hypercars."
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://roadster-play.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About Us",
+          "item": "https://roadster-play.vercel.app/about"
+        }
+      ]
+    }
+  }
+  </script>
+
+  <div style="max-width: 1180px; margin: 0 auto; padding: 2.5rem 1.5rem 5rem;">
+    
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="Breadcrumb" style="margin-bottom: 2.5rem;">
+      <ol style="list-style: none; display: flex; align-items: center; gap: 0.5rem; font-size: 13px; color: var(--mute); padding: 0; margin: 0; font-family: 'Geist Mono', monospace;">
+        <li><a href="/" class="nav-link" style="padding: 0;">Home</a></li>
+        <li aria-hidden="true" style="color: var(--faint);">/</li>
+        <li aria-current="page" style="color: var(--ink); font-weight: 600;">About Us</li>
+      </ol>
+    </nav>
+
+    <!-- Page Header / Hero -->
+    <header style="max-width: 820px; margin-bottom: 4rem;">
+      <span class="mono-eyebrow" style="color: var(--link);">MISSION &amp; ARCHITECTURE</span>
+      <h1 class="display-xl" style="margin-top: 0.5rem; color: var(--ink);">
+        Pioneering Real-Time Hypercar Physics in the Web Browser
+      </h1>
+      <p class="body-lg" style="margin-top: 1.25rem; color: var(--body); line-height: 1.7;">
+        The <strong>3D Tesla Roadster Game</strong> was founded on a simple question: Can modern browser technologies render the theoretical physics of the next-generation Tesla Roadster with the SpaceX Package at a blisteringly responsive 60 frames per second without any downloads or plugins?
+      </p>
+    </header>
+
+    <!-- Content Section: The Origin Story -->
+    <section style="margin-bottom: 4rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; align-items: start;">
+        <div class="vercel-card" style="padding: 2.25rem;">
+          <span class="mono-eyebrow" style="color: var(--mute);">OUR ORIGIN STORY</span>
+          <h2 class="heading-md" style="margin-top: 0.5rem; color: var(--ink);">From Impossible Specs to Real-Time Code</h2>
+          <p class="body-md" style="margin-top: 1rem; color: var(--body); line-height: 1.7;">
+            When the theoretical benchmarks of the 2026 Tesla Roadster were announced—0 to 60 MPH in 0.58 seconds, cold-gas nitrogen thrusters capable of instant directional thrust, and active 2G underbody vacuum suction—the automotive and gaming worlds debated whether such numbers were physically plausible or technically representable in a consumer simulation.
+          </p>
+          <p class="body-md" style="margin-top: 1rem; color: var(--body); line-height: 1.7;">
+            We assembled a passionate collective of WebGL graphics developers, automotive simulation engineers, and open-web advocates to model those exact mechanics in Three.js and WebGL. Our goal was not to make another arcade racer with fake speed effects, but to build an interactive, mathematically rigorous digital twin that anyone on Earth could launch in under 2 seconds.
+          </p>
+        </div>
+
+        <div class="vercel-card" style="padding: 2.25rem;">
+          <span class="mono-eyebrow" style="color: var(--mute);">CORE PHILOSOPHY</span>
+          <h2 class="heading-md" style="margin-top: 0.5rem; color: var(--ink);">The Frictionless Open Web</h2>
+          <p class="body-md" style="margin-top: 1rem; color: var(--body); line-height: 1.7;">
+            Modern PC and console titles demand 100GB installs, paid subscriptions, and proprietary hardware. We believe the future of interactive 3D media belongs to the open web.
+          </p>
+          <ul style="margin-top: 1.25rem; display: flex; flex-direction: column; gap: 0.85rem; padding-left: 1.25rem; color: var(--body); font-size: 14px; line-height: 1.6;">
+            <li><strong>Zero Download Barrier:</strong> Jump into the driver seat via a single URL on Chrome, Safari, Edge, or Firefox.</li>
+            <li><strong>Cross-Platform Universal Support:</strong> Seamless scaling across desktop PCs, high-refresh gaming monitors, M-series Macs, iPad Pro, and mobile phones.</li>
+            <li><strong>Strict Privacy First:</strong> Zero account gates, zero invasive trackers, and 100% client-side GPU execution.</li>
+            <li><strong>100% Free Forever:</strong> Educational and recreational access with no microtransactions or pay-to-win mechanics.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Engineering Deep-Dive: 4 Physics Pillars -->
+    <section style="margin-bottom: 4.5rem;">
+      <div style="margin-bottom: 2rem;">
+        <span class="mono-eyebrow" style="color: var(--link);">ENGINEERING MATRIX</span>
+        <h2 class="heading-lg" style="margin-top: 0.35rem; color: var(--ink);">The Four Pillars of the Roadster Physics Engine</h2>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+        <div class="vercel-card" style="padding: 1.75rem;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <span class="mono-eyebrow" style="color: var(--link);">PILLAR 01</span>
+            <span style="font-family: 'Geist Mono', monospace; font-size: 11px; padding: 2px 6px; background: var(--canvas-sunken); border: 1px solid var(--hairline); border-radius: 4px;">AERO + THRUST</span>
+          </div>
+          <h3 class="heading-md" style="font-size: 1.1rem; color: var(--ink);">SpaceX Cold-Gas Dynamics</h3>
+          <p class="body-md" style="margin-top: 0.75rem; font-size: 13.5px; line-height: 1.65; color: var(--body);">
+            Simulates four directional Composite Overwrapped Pressure Vessel (COPV) nitrogen thrusters. When ignited, thrust vectors exert up to 1.8G of instantaneous longitudinal acceleration, altering the vehicle's center-of-gravity envelope in real-time.
+          </p>
+        </div>
+
+        <div class="vercel-card" style="padding: 1.75rem;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <span class="mono-eyebrow" style="color: var(--cyan);">PILLAR 02</span>
+            <span style="font-family: 'Geist Mono', monospace; font-size: 11px; padding: 2px 6px; background: var(--canvas-sunken); border: 1px solid var(--hairline); border-radius: 4px;">SURFACE ADHESION</span>
+          </div>
+          <h3 class="heading-md" style="font-size: 1.1rem; color: var(--ink);">2G Active Venturi Suction</h3>
+          <p class="body-md" style="margin-top: 0.75rem; font-size: 13.5px; line-height: 1.65; color: var(--body);">
+            Models inverted Bernoulli downforce fans that pin the hypercar to surface normals. Players can scale 90-degree vertical skyscraper facades and inverted loop-de-loops without losing aerodynamic wheel contact.
+          </p>
+        </div>
+
+        <div class="vercel-card" style="padding: 1.75rem;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <span class="mono-eyebrow" style="color: var(--violet);">PILLAR 03</span>
+            <span style="font-family: 'Geist Mono', monospace; font-size: 11px; padding: 2px 6px; background: var(--canvas-sunken); border: 1px solid var(--hairline); border-radius: 4px;">POWERTRAIN</span>
+          </div>
+          <h3 class="heading-md" style="font-size: 1.1rem; color: var(--ink);">Tri-Motor Vectoring &amp; Slip</h3>
+          <p class="body-md" style="margin-top: 0.75rem; font-size: 13.5px; line-height: 1.65; color: var(--body);">
+            One front motor and two rear motors dynamically adjust torque per wheel. Combined with Pacejka-derived tire slip angle curves, the vehicle transitions predictably from glued apex carving into high-slip counter-steer drifts.
+          </p>
+        </div>
+
+        <div class="vercel-card" style="padding: 1.75rem;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <span class="mono-eyebrow" style="color: var(--pink);">PILLAR 04</span>
+            <span style="font-family: 'Geist Mono', monospace; font-size: 11px; padding: 2px 6px; background: var(--canvas-sunken); border: 1px solid var(--hairline); border-radius: 4px;">TELEMETRY</span>
+          </div>
+          <h3 class="heading-md" style="font-size: 1.1rem; color: var(--ink);">Millisecond Telemetry Pipeline</h3>
+          <p class="body-md" style="margin-top: 0.75rem; font-size: 13.5px; line-height: 1.65; color: var(--body);">
+            High-precision timers measure 0–60 MPH, 0–100 MPH, and quarter-mile drag traps with NHRA-accurate staging light logic. Telemetry updates at the native monitor refresh rate (60Hz to 240Hz).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Technical Stack -->
+    <section style="margin-bottom: 4.5rem; border-top: 1px solid var(--hairline); padding-top: 3.5rem;">
+      <div style="margin-bottom: 2rem;">
+        <span class="mono-eyebrow" style="color: var(--link);">UNDER THE HOOD</span>
+        <h2 class="heading-lg" style="margin-top: 0.35rem; color: var(--ink);">Modern Web Architecture &amp; Tech Stack</h2>
+        <p class="body-md" style="color: var(--mute); margin-top: 0.5rem; max-width: 680px;">
+          How we engineered an uncompromising Multi-Page Application (MPA) with edge-optimized WebGL streaming.
+        </p>
+      </div>
+
+      <div style="overflow-x: auto; border: 1px solid var(--hairline); border-radius: 8px;">
+        <table class="specs-table">
+          <thead>
+            <tr>
+              <th>Layer</th>
+              <th>Technology</th>
+              <th>Purpose &amp; Implementation Detail</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="highlight">3D Graphics Engine</td>
+              <td>Three.js r128 (WebGL 2.0)</td>
+              <td>High-throughput draw call batching, custom PBR car paint shaders, and real-time environment reflection mapping.</td>
+            </tr>
+            <tr>
+              <td class="highlight">Site Framework</td>
+              <td>Astro 5.0 (Static MPA)</td>
+              <td>Multi-Page Application architecture generating clean, static HTML for optimal search engine indexing, zero bundle bloat, and sub-100ms TTFB.</td>
+            </tr>
+            <tr>
+              <td class="highlight">Design System</td>
+              <td>Vercel Geist System</td>
+              <td>Developer-grade typography (Geist Sans, Geist Mono), precision light/dark theme CSS variables, and accessible interactive controls.</td>
+            </tr>
+            <tr>
+              <td class="highlight">3D Asset Compression</td>
+              <td>glTF 2.0 + Meshopt Decoder</td>
+              <td>Compressed the detailed 45MB vehicle model into a 1.8MB binary payload for sub-second streaming on cellular connections.</td>
+            </tr>
+            <tr>
+              <td class="highlight">Audio Synthesis</td>
+              <td>Web Audio API</td>
+              <td>Real-time programmatic electric motor frequency modulation and procedural cold-gas hiss without static audio file latency.</td>
+            </tr>
+            <tr>
+              <td class="highlight">Edge Hosting</td>
+              <td>Global Edge CDN</td>
+              <td>Zero-cold-start edge distribution with HTTP/3, Brotli compression, and automated edge caching.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Important Legal Disclaimer & Trademark Notice -->
+    <section class="vercel-card" style="padding: 2.25rem; margin-bottom: 4.5rem; border-left: 4px solid var(--warning);">
+      <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+        <span style="font-size: 1.25rem;">⚖️</span>
+        <h2 class="heading-md" style="color: var(--ink); font-size: 16px;">Independent Project &amp; Trademark Notice</h2>
+      </div>
+      <p class="body-sm" style="color: var(--body); line-height: 1.7;">
+        The <strong>3D Tesla Roadster Game</strong> is an independent, non-commercial educational project and interactive fan simulation developed to celebrate groundbreaking innovations in electric vehicle performance and aerospace propulsion. 
+        "Tesla", "Roadster", and "SpaceX" are registered trademarks of Tesla, Inc. and Space Exploration Technologies Corp. 
+        This interactive simulator is neither authorized, endorsed, sponsored, nor affiliated in any manner with Tesla, Inc., SpaceX, or their subsidiaries. All other hypercar marks (Rimac, Bugatti, Porsche) are property of their respective owners and used exclusively for historical benchmark and educational comparison purposes.
+      </p>
+    </section>
+
+    <!-- Call to Action Banner -->
+    <section style="text-align: center; padding: 3.5rem 1.5rem; background: var(--canvas-elevated); border: 1px solid var(--hairline); border-radius: 8px;">
+      <span class="mono-eyebrow" style="color: var(--link);">READY TO TEST DRIVE?</span>
+      <h2 class="heading-lg" style="margin-top: 0.5rem; color: var(--ink);">Experience the Simulator Firsthand</h2>
+      <p class="body-md" style="margin-top: 0.75rem; color: var(--mute); max-width: 580px; margin-left: auto; margin-right: auto;">
+        Test the cold-gas thrusters on the quarter-mile drag strip or take the Roadster on a vertical skyscraper run.
+      </p>
+      <div style="display: flex; gap: 1rem; margin-top: 1.75rem; justify-content: center; flex-wrap: wrap;">
+        <a href="/play" class="btn-pill-primary" style="height: 42px; padding: 0 24px;">
+          <span>Launch Roadster Simulator</span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <a href="/contact" class="btn-pill-secondary" style="height: 42px; padding: 0 20px;">
+          Get in Touch With Us
+        </a>
+      </div>
+    </section>
+
+  </div>
+</Layout>

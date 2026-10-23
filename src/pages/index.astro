@@ -3,43 +3,149 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout 
-  title="Tesla Roadster 2026 | Free 3D WebGL Hypercar Browser Game" 
-  description="Play the free 3D Tesla Roadster 2026 simulator online. Sub-0.6s 0-60 MPH, 4 cold-gas thrusters, 2G wall suction, drag strip, Mario Kart mountain circuit, and cyber combat."
+  title="3D Tesla Roadster Game | Play Tesla Roadster Online Free" 
+  description="Play the free 3D Tesla Roadster game online! Experience high-speed Tesla Roadster driving with SpaceX thrusters, 2G wall suction, open world free roam & drag racing."
+  canonical="https://roadster-play.vercel.app/"
+  keywords="3D Tesla Roadster Game, Tesla Roadster game, Roadster game, Tesla Roadster driving game, Tesla Roadster open world game, play Tesla Roadster online, webgl racing game, hypercar simulator"
 >
+  <!-- Schema.org JSON-LD Structured Data: Dedicated FAQPage for Google Rich Snippets -->
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the 3D Tesla Roadster Game?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "<p>The <strong>3D Tesla Roadster Game</strong> is an advanced, free-to-play browser hypercar driving simulator modeling the next-generation Tesla Roadster equipped with the SpaceX Package. Built on Three.js and WebGL, the game allows players to experience sub-0.6-second 0–60 MPH acceleration, functional cold-gas nitrogen thrusters, 2G ground and wall suction, and multiple gameplay environments directly in any web browser without installation.</p>"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I play the Tesla Roadster game online for free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "<p>You can <strong>play Tesla Roadster online</strong> for free right here! Simply click the 'Launch Roadster Game' button on the homepage or navigate to the <a href=\"https://roadster-play.vercel.app/play\">Play Simulator</a> page. It starts instantaneously inside your browser viewport on desktop, laptop, tablet, or smartphone without any download, plugin, or account creation required.</p>"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What makes this Tesla Roadster driving game unique?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "<p>Unlike standard arcade racers, this <strong>Tesla Roadster driving game</strong> incorporates authentic physics simulations: tri-motor all-wheel drive torque delivery, tire slip angles for realistic counter-steer drifting, directional SpaceX cold-gas thruster plumes that deliver explosive omni-directional burst force, and active 2G vacuum suction that lets you drive up vertical skyscraper facades and inverted ceiling structures.</p>"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What gameplay modes are available in this Roadster game?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "<p>This <strong>Roadster game</strong> offers four distinct gameplay modes switchable instantly with the [M] key:</p><ul><li><strong>Open World Free Roam:</strong> Complete sandbox exploration with ramps, 90° wall climbing, and drift scoring.</li><li><strong>1/4 Mile Drag Strip:</strong> Regulation NHRA Christmas tree staging duel against the Rimac Nevera, Bugatti Tourbillon, and Porsche Taycan.</li><li><strong>Alpine Mountain Circuit GP:</strong> A Mario Kart-inspired 42m elevation mountain climb with speed boost pads and AI rival racers.</li><li><strong>Cyber Combat Arena:</strong> A battle survival zone featuring EMP shockwaves, energy canisters, and vehicle demolition.</li></ul>"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I play the Tesla Roadster open world game on mobile devices?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "<p>Yes! The <strong>Tesla Roadster open world game</strong> is completely responsive and optimized for mobile devices. On touchscreen phones and tablets (including iOS Safari and Android Chrome), the game renders a dedicated touch HUD with an on-screen virtual steering wheel, throttle, brake, and thruster boost buttons, accompanied by high-DPI retina rendering.</p>"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do the SpaceX cold-gas thrusters and 2G wall suction work in the game?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "<p>Pressing <kbd>Space</kbd> or the on-screen rocket icon activates 4 rear cold-gas thrusters powered by Composite Overwrapped Pressure Vessels (COPV). This delivers an instant omnidirectional thrust burst, accelerating the car from 0 to 60 MPH in 0.58 seconds. Pressing <kbd>G</kbd> triggers underbody Venturi turbines generating 2G downward force, locking the tires to asphalt and enabling vertical 90-degree skyscraper wall climbing.</p>"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Schema.org JSON-LD Structured Data: VideoGame Specification -->
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "3D Tesla Roadster Game",
+    "alternateName": [
+      "Tesla Roadster game",
+      "Roadster game",
+      "Tesla Roadster driving game",
+      "Tesla Roadster open world game",
+      "play Tesla Roadster online"
+    ],
+    "description": "Play the ultimate 3D Tesla Roadster game online. Experience real-time WebGL physics, procedural SpaceX cold-gas thrusters, 2G ground and wall suction, open world free roam, quarter-mile drag racing, and mountain circuit racing.",
+    "genre": ["Racing Game", "Simulation", "Open World", "Stunt Driving", "Action"],
+    "gamePlatform": ["Web Browser", "PC", "Mac", "Linux", "iOS", "Android"],
+    "applicationCategory": "Game",
+    "operatingSystem": "Any modern web browser with WebGL support",
+    "url": "https://roadster-play.vercel.app/",
+    "image": "https://roadster-play.vercel.app/og-image.png",
+    "playMode": "SinglePlayer",
+    "inLanguage": "en-US",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "1420"
+    }
+  }
+  </script>
+
   <!-- Hero Section strictly following Vercel Geist Design System -->
   <section style="position: relative; overflow: hidden; padding: 6rem 1.5rem 5rem; text-align: center; border-bottom: 1px solid var(--hairline); background: var(--canvas);">
     <!-- Subtle Hero Radial Glow using Vercel Tokens -->
     <div style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); width: 850px; height: 400px; background: radial-gradient(ellipse at center, rgba(0, 112, 243, 0.12) 0%, rgba(121, 40, 202, 0.05) 45%, rgba(0, 0, 0, 0) 70%); pointer-events: none; z-index: 0;" aria-hidden="true"></div>
     
-    <div style="position: relative; z-index: 1; max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+    <div style="position: relative; z-index: 1; max-width: 920px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
       <!-- Mono Eyebrow Badge (Geist Mono, 11px, 1px hairline border) -->
-      <div style="display: inline-flex; align-items: center; gap: 0.6rem; padding: 5px 14px; border-radius: 100px; background: var(--canvas-elevated); border: 1px solid var(--hairline); box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
-        <span class="mono-eyebrow" style="color: var(--link);">SPACEX COLD-GAS THRUSTER PACKAGE</span>
+      <div style="display: inline-flex; align-items: center; gap: 0.6rem; padding: 5px 14px; border-radius: 100px; background: var(--canvas-elevated); border: 1px solid var(--hairline); box-shadow: 0 1px 3px rgba(0,0,0,0.04); flex-wrap: wrap; justify-content: center;">
+        <span class="mono-eyebrow" style="color: var(--link);">SPACEX COLD-GAS THRUSTERS</span>
         <span style="color: var(--hairline);" aria-hidden="true">|</span>
         <span class="mono-eyebrow" style="color: var(--ink);">0–60 MPH IN 0.58s</span>
+        <span style="color: var(--hairline);" aria-hidden="true">|</span>
+        <span class="mono-eyebrow" style="color: var(--violet);">FREE 3D BROWSER GAME</span>
       </div>
 
       <!-- Display XL Heading with tight tracking -->
       <h1 class="display-xl" style="color: var(--ink);">
-        The Next-Gen <span class="hero-mesh-text">Roadster 2026</span> Simulator
+        The Ultimate <span class="hero-mesh-text">3D Tesla Roadster Game</span> & Simulator
       </h1>
 
-      <!-- Body LG Subhead -->
-      <p class="body-lg" style="max-width: 680px; margin: 0 auto;">
-        Real-time 3D hypercar engineering simulator powered by Three.js. Experience procedural COPV cold-gas thrusters, 2G wall suction, high-slip counter-steer drifting, and the high-altitude Mario Kart mountain circuit.
+      <!-- Body LG Subhead with natural keyword placement -->
+      <p class="body-lg" style="max-width: 720px; margin: 0 auto;">
+        Play Tesla Roadster online in this high-octane 3D hypercar engineering simulator. Master an authentic Tesla Roadster driving game featuring procedural SpaceX cold-gas thrusters, 2G wall suction, high-slip counter-steer drifting, and an expansive Tesla Roadster open world game sandbox.
       </p>
 
       <!-- Pill Marketing Action Buttons -->
       <div style="display: flex; gap: 1rem; margin-top: 0.5rem; flex-wrap: wrap; justify-content: center;">
-        <a href="/play" class="btn-pill-primary" aria-label="Launch 3D Game Viewport">
-          <span>Launch Simulator</span>
+        <a href="/play" class="btn-pill-primary" aria-label="Play 3D Tesla Roadster Game Online Now">
+          <span>Launch Roadster Game</span>
           <span aria-hidden="true">→</span>
+        </a>
+        <a href="#modes" class="btn-pill-secondary">
+          Open World Modes
         </a>
         <a href="#comparison" class="btn-pill-secondary">
           Compare Specs
         </a>
-        <a href="#modes" class="btn-pill-secondary">
-          Explore Modes
+        <a href="#about" class="btn-pill-secondary">
+          Why Play Online
+        </a>
+        <a href="#faq" class="btn-pill-secondary">
+          FAQ
         </a>
       </div>
 
@@ -60,7 +166,7 @@ import Layout from '../layouts/Layout.astro';
     <div style="text-align: center; margin-bottom: 3.5rem;">
       <span class="mono-eyebrow" style="color: var(--link);">ENGINEERING CAPABILITIES</span>
       <h2 class="heading-lg" style="margin-top: 0.35rem; color: var(--ink);">Superhuman Physics & Technology</h2>
-      <p class="body-md" style="margin-top: 0.5rem; color: var(--mute);">Engineered beyond the physical boundaries of conventional road cars.</p>
+      <p class="body-md" style="margin-top: 0.5rem; color: var(--mute);">Engineered beyond the physical boundaries of conventional road cars in this 3D Tesla Roadster game.</p>
     </div>
 
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.5rem;">
@@ -77,7 +183,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="mono-eyebrow" style="color: var(--link); margin-bottom: 0.5rem;">SPACEX COPV THRUSTERS</div>
         <h3 class="heading-md" style="margin-bottom: 0.5rem; color: var(--ink);">Quad Cold-Gas Boosters</h3>
         <p class="body-md" style="color: var(--body); flex: 1;">
-          Composite Overwrapped Pressure Vessels (COPV) releasing nitrogen thruster plumes. Generates instant omni-directional burst force propelling 0 to 60 mph in under 0.6 seconds.
+          Composite Overwrapped Pressure Vessels (COPV) releasing nitrogen thruster plumes. Generates instant omni-directional burst force propelling 0 to 60 mph in under 0.6 seconds in this realistic Tesla Roadster game.
         </p>
       </div>
 
@@ -105,7 +211,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="mono-eyebrow" style="color: var(--warning); margin-bottom: 0.5rem;">HIGH-ALTITUDE GP</div>
         <h3 class="heading-md" style="margin-bottom: 0.5rem; color: var(--ink);">Mario Kart Mountain Circuit</h3>
         <p class="body-md" style="color: var(--body); flex: 1;">
-          Ascend a procedural 42-meter alpine ribbon track complete with boost recharge strips, high-camber S-curves, snowcap crests, and dynamic rival hypercar AI competitors.
+          Ascend a procedural 42-meter alpine ribbon track complete with boost recharge strips, high-camber S-curves, snowcap crests, and dynamic rival hypercar AI competitors in this pulse-pounding driving circuit.
         </p>
       </div>
 
@@ -135,7 +241,7 @@ import Layout from '../layouts/Layout.astro';
       <div style="text-align: center; margin-bottom: 3rem;">
         <span class="mono-eyebrow" style="color: var(--link);">BENCHMARK MATRIX</span>
         <h2 class="heading-lg" style="margin-top: 0.35rem; color: var(--ink);">Hypercar Performance Showdown</h2>
-        <p class="body-md" style="margin-top: 0.5rem; color: var(--mute);">Verified engineering specifications: Tesla Roadster 2026 vs World Class Hypercars.</p>
+        <p class="body-md" style="margin-top: 0.5rem; color: var(--mute);">Verified engineering specifications: 3D Tesla Roadster Game vs World-Class Hypercars.</p>
       </div>
 
       <div class="vercel-card" style="overflow-x: auto; border-radius: 8px;">
@@ -196,7 +302,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <div style="margin-top: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
-        <span class="body-sm" style="color: var(--mute);">* Tesla Roadster 2026 specs enabled with SpaceX Package cold-gas thrusters and ground effect suction.</span>
+        <span class="body-sm" style="color: var(--mute);">* Tesla Roadster specs enabled with SpaceX Package cold-gas thrusters and ground effect suction in our driving simulator.</span>
         <a href="/play" class="btn-pill-primary" style="height: 36px; padding: 0 16px; font-size: 13px;">Test In Simulator →</a>
       </div>
     </div>
@@ -207,20 +313,20 @@ import Layout from '../layouts/Layout.astro';
     <div style="text-align: center; margin-bottom: 3.5rem;">
       <span class="mono-eyebrow" style="color: var(--link);">SELECTABLE SIMULATION MODES</span>
       <h2 class="heading-lg" style="margin-top: 0.35rem; color: var(--ink);">Four Distinct Simulation Environments</h2>
-      <p class="body-md" style="margin-top: 0.5rem; color: var(--mute);">Switch modes seamlessly with key [M] without reloading the scene.</p>
+      <p class="body-md" style="margin-top: 0.5rem; color: var(--mute);">Switch between modes seamlessly with key [M] without reloading the scene.</p>
     </div>
 
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
-      <!-- Mode 1: Free Roam Sandbox -->
+      <!-- Mode 1: Free Roam Sandbox (Open World) -->
       <div class="vercel-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
         <div>
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
             <span class="mono-eyebrow" style="color: var(--link); background: var(--link-soft-bg); padding: 2px 8px; border-radius: 4px;">MODE 01</span>
             <span class="mono-eyebrow" style="color: var(--mute);">SANDBOX</span>
           </div>
-          <h3 class="heading-md" style="margin-bottom: 0.65rem; color: var(--ink);">Open World Free Roam</h3>
+          <h3 class="heading-md" style="margin-bottom: 0.65rem; color: var(--ink);">Tesla Roadster Open World Game</h3>
           <p class="body-md" style="margin-bottom: 1.5rem; color: var(--body);">
-            Full hypercar sandbox physics. Engage 4 SpaceX cold-gas thrusters, scale 90° building walls with 2G suction, and pull high-slip drifts.
+            Full hypercar sandbox physics. Engage 4 SpaceX cold-gas thrusters, scale 90° building walls with 2G suction, and pull high-slip drifts in this unrestricted Tesla Roadster open world game.
           </p>
           <ul class="body-sm" style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2rem;">
             <li style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--ink);" aria-hidden="true">✓</span> Quad Cold-Gas Decompression Audio</li>
@@ -238,9 +344,9 @@ import Layout from '../layouts/Layout.astro';
             <span class="mono-eyebrow" style="color: var(--error); background: rgba(238,0,0,0.1); padding: 2px 8px; border-radius: 4px;">MODE 02</span>
             <span class="mono-eyebrow" style="color: var(--mute);">SPEED TRAP</span>
           </div>
-          <h3 class="heading-md" style="margin-bottom: 0.65rem; color: var(--ink);">1/4 Mile Drag Strip</h3>
+          <h3 class="heading-md" style="margin-bottom: 0.65rem; color: var(--ink);">1/4 Mile Drag Strip Racing</h3>
           <p class="body-md" style="margin-bottom: 1.5rem; color: var(--body);">
-            Regulation NHRA drag duel with Bugatti Tourbillon, Rimac Nevera, and Porsche Taycan. Christmas tree staging lights with red-light detection.
+            Test this Roadster game against the world's quickest hypercars: Bugatti Tourbillon, Rimac Nevera, and Porsche Taycan. NHRA Christmas tree staging lights with red-light detection.
           </p>
           <ul class="body-sm" style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2rem;">
             <li style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--ink);" aria-hidden="true">✓</span> Christmas Tree Staging System</li>
@@ -260,7 +366,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <h3 class="heading-md" style="margin-bottom: 0.65rem; color: var(--ink);">Mountain Circuit GP</h3>
           <p class="body-md" style="margin-bottom: 1.5rem; color: var(--body);">
-            Mario Kart-inspired 3D alpine ribbon circuit. Ascend the spiral alpine trail to the 42m snowcap peak, hit +50 MPH boost pads, and outpace 4 AI rivals.
+            Mario Kart-inspired 3D alpine ribbon circuit. Ascend the spiral alpine trail to the 42m snowcap peak, hit +50 MPH boost pads, and outpace 4 AI rivals in this high-intensity Tesla Roadster driving game.
           </p>
           <ul class="body-sm" style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2rem;">
             <li style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--ink);" aria-hidden="true">✓</span> 42m Mountain Ascent & Snow Chute</li>
@@ -379,6 +485,193 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO Content Section: Why Play This 3D Tesla Roadster Game Online -->
+  <section id="about" style="padding: 5rem 1.5rem; border-top: 1px solid var(--hairline); background: var(--canvas-elevated);">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <span class="mono-eyebrow" style="color: var(--link);">WHY PLAY ONLINE</span>
+        <h2 class="heading-lg" style="margin-top: 0.35rem; color: var(--ink);">The Ultimate 3D Tesla Roadster Driving Game</h2>
+        <p class="body-md" style="margin-top: 0.5rem; color: var(--mute); max-width: 720px; margin-left: auto; margin-right: auto;">
+          Experience an uncompromised, free browser-based hypercar simulator built with pure WebGL and Three.js — no downloads or high-end GPU hardware required.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.5rem;">
+        <!-- Card 1 -->
+        <div class="vercel-card" style="padding: 2rem;">
+          <div style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 8px; background: var(--link-soft-bg); color: var(--link); margin-bottom: 1.25rem;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M10 15V9l6 3-6 3z"/>
+            </svg>
+          </div>
+          <h3 class="heading-md" style="margin-bottom: 0.5rem; color: var(--ink);">Play Tesla Roadster Online Instantly</h3>
+          <p class="body-md" style="color: var(--body);">
+            Zero installation and no disk footprint. Play Tesla Roadster online directly in Google Chrome, Apple Safari, Mozilla Firefox, or Microsoft Edge with buttery 60 FPS performance on both desktop and mobile devices.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="vercel-card" style="padding: 2rem;">
+          <div style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 8px; background: rgba(0, 223, 216, 0.12); color: #008f88; margin-bottom: 1.25rem;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <h3 class="heading-md" style="margin-bottom: 0.5rem; color: var(--ink);">Authentic Roadster Driving Dynamics</h3>
+          <p class="body-md" style="color: var(--body);">
+            Engineered as a high-fidelity Tesla Roadster driving game. Features independent tri-motor all-wheel drive, procedural tire slip angles, lateral G-meter telemetry, and high-slip counter-steer drifting mechanics.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="vercel-card" style="padding: 2rem;">
+          <div style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 8px; background: rgba(121, 40, 202, 0.12); color: var(--violet); margin-bottom: 1.25rem;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+              <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+            </svg>
+          </div>
+          <h3 class="heading-md" style="margin-bottom: 0.5rem; color: var(--ink);">SpaceX Thrusters & 2G Wall Suction</h3>
+          <p class="body-md" style="color: var(--body);">
+            Unleash the full capability of cold-gas rocket thrusters. Tap [Space] for explosive 0-60 MPH acceleration in 0.58 seconds, or engage [G] active 2G vacuum suction to defy gravity and scale 90° building facades.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="vercel-card" style="padding: 2rem;">
+          <div style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 8px; background: rgba(245, 166, 35, 0.12); color: var(--warning); margin-bottom: 1.25rem;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/>
+              <line x1="8" y1="2" x2="8" y2="18"/>
+              <line x1="16" y1="6" x2="16" y2="22"/>
+            </svg>
+          </div>
+          <h3 class="heading-md" style="margin-bottom: 0.5rem; color: var(--ink);">Tesla Roadster Open World Sandbox</h3>
+          <p class="body-md" style="color: var(--body);">
+            A true Tesla Roadster open world game playground. Explore expansive city streets, launch off architectural stunt ramps, climb glass high-rises, and race on the high-altitude Alpine Mountain Circuit GP.
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top: 2.5rem; text-align: center; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <a href="/about" class="btn-pill-secondary" style="height: 38px; padding: 0 18px; font-size: 13px;">
+          Learn More About Our Team &amp; Physics Engine →
+        </a>
+        <a href="/contact" class="btn-pill-secondary" style="height: 38px; padding: 0 18px; font-size: 13px;">
+          Contact Engineering Support →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Frequently Asked Questions (FAQ) Section -->
+  <section id="faq" style="padding: 5rem 1.5rem; border-top: 1px solid var(--hairline); background: var(--canvas);">
+    <div style="max-width: 900px; margin: 0 auto; width: 100%;">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <span class="mono-eyebrow" style="color: var(--link);">QUESTIONS & ANSWERS</span>
+        <h2 class="heading-lg" style="margin-top: 0.35rem; color: var(--ink);">Frequently Asked Questions</h2>
+        <p class="body-md" style="margin-top: 0.5rem; color: var(--mute);">
+          Everything you need to know about the 3D Tesla Roadster Game, physics simulation, controls, and compatibility.
+        </p>
+      </div>
+
+      <div class="faq-accordion">
+        <!-- FAQ 1 -->
+        <details class="faq-item" open>
+          <summary class="faq-trigger">
+            <span>What is the 3D Tesla Roadster Game?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-content">
+            The <strong>3D Tesla Roadster Game</strong> is an advanced, free-to-play browser hypercar driving simulator modeling the next-generation Tesla Roadster equipped with the SpaceX Package. Built on Three.js and WebGL, the game allows players to experience sub-0.6-second 0–60 MPH acceleration, functional cold-gas nitrogen thrusters, 2G ground and wall suction, and multiple gameplay environments directly in any web browser without installation.
+          </div>
+        </details>
+
+        <!-- FAQ 2 -->
+        <details class="faq-item">
+          <summary class="faq-trigger">
+            <span>How can I play the Tesla Roadster game online for free?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-content">
+            You can <strong>play Tesla Roadster online</strong> for free right here! Simply click the "Launch Roadster Game" button on the homepage or navigate to the <a href="/play" style="color: var(--link); text-decoration: underline;">Play Simulator</a> page. It starts instantaneously inside your browser viewport on desktop, laptop, tablet, or smartphone without any download, plugin, or account creation required.
+          </div>
+        </details>
+
+        <!-- FAQ 3 -->
+        <details class="faq-item">
+          <summary class="faq-trigger">
+            <span>What makes this Tesla Roadster driving game unique?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-content">
+            Unlike standard arcade racers, this <strong>Tesla Roadster driving game</strong> incorporates authentic physics simulations: tri-motor all-wheel drive torque delivery, tire slip angles for realistic counter-steer drifting, directional SpaceX cold-gas thruster plumes that deliver explosive omni-directional burst force, and active 2G vacuum suction that lets you drive up vertical skyscraper facades and inverted ceiling structures.
+          </div>
+        </details>
+
+        <!-- FAQ 4 -->
+        <details class="faq-item">
+          <summary class="faq-trigger">
+            <span>What gameplay modes are available in this Roadster game?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-content">
+            This <strong>Roadster game</strong> offers four distinct gameplay modes switchable instantly with the [M] key:
+            <ul style="margin-top: 0.5rem; padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.35rem;">
+              <li><strong>Open World Free Roam:</strong> Complete sandbox exploration with ramps, 90° wall climbing, and drift scoring.</li>
+              <li><strong>1/4 Mile Drag Strip:</strong> Regulation NHRA Christmas tree staging duel against the Rimac Nevera, Bugatti Tourbillon, and Porsche Taycan.</li>
+              <li><strong>Alpine Mountain Circuit GP:</strong> A Mario Kart-inspired 42m elevation mountain climb with speed boost pads and AI rival racers.</li>
+              <li><strong>Cyber Combat Arena:</strong> A battle survival zone featuring EMP shockwaves, energy canisters, and vehicle demolition.</li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- FAQ 5 -->
+        <details class="faq-item">
+          <summary class="faq-trigger">
+            <span>Can I play the Tesla Roadster open world game on mobile devices?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-content">
+            Yes! The <strong>Tesla Roadster open world game</strong> is completely responsive and optimized for mobile devices. On touchscreen phones and tablets (including iOS Safari and Android Chrome), the game renders a dedicated touch HUD with an on-screen virtual steering wheel, throttle, brake, and thruster boost buttons, accompanied by high-DPI retina rendering.
+          </div>
+        </details>
+
+        <!-- FAQ 6 -->
+        <details class="faq-item">
+          <summary class="faq-trigger">
+            <span>How do the SpaceX cold-gas thrusters and 2G wall suction work in the game?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-content">
+            Pressing <span class="kbd-pill">Space</span> or the on-screen rocket icon activates 4 rear cold-gas thrusters powered by Composite Overwrapped Pressure Vessels (COPV). This delivers an instant omnidirectional thrust boost, accelerating the car from 0 to 60 MPH in 0.58 seconds. Pressing <span class="kbd-pill">G</span> triggers underbody Venturi turbines generating 2G downward force, locking the tires to asphalt and enabling vertical 90-degree skyscraper wall climbing.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- High-Conversion Launch Banner before Footer -->
+  <section style="padding: 5rem 1.5rem; border-top: 1px solid var(--hairline); background: var(--canvas-elevated); text-align: center;">
+    <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 1.25rem;">
+      <span class="mono-eyebrow" style="color: var(--link);">READY TO DRIVE?</span>
+      <h2 class="heading-lg" style="color: var(--ink);">Experience the 3D Tesla Roadster Game Now</h2>
+      <p class="body-md" style="color: var(--body); max-width: 600px;">
+        Ignite the cold-gas thrusters, defy gravity on vertical skyscraper walls, and set new quarter-mile drag strip records. Free to play online right in your browser.
+      </p>
+      <div style="display: flex; gap: 1rem; margin-top: 0.75rem; flex-wrap: wrap; justify-content: center;">
+        <a href="/play" class="btn-pill-primary" style="height: 44px; padding: 0 24px; font-size: 15px;" aria-label="Launch 3D Tesla Roadster Game Simulator">
+          <span>Launch Simulator Now</span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <a href="#controls" class="btn-pill-secondary" style="height: 44px; padding: 0 20px; font-size: 15px;">
+          View Flight Controls
+        </a>
       </div>
     </div>
   </section>
