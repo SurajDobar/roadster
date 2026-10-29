@@ -1,0 +1,33 @@
+# 3D Tesla Roadster Game
+
+> An interactive 3D WebGL hypercar simulator modeling the next-generation Tesla Roadster equipped with the theoretical SpaceX Package. Built with Three.js, it offers sub-0.6-second 0–60 MPH launches, functional cold-gas nitrogen thrusters, active 2G wall suction, and open-world driving directly in your web browser with no downloads or installation required.
+
+## Simulator Links
+
+- [Play Simulator Online](https://roadster-play.vercel.app/play): Fullscreen interactive WebGL driving simulator with keyboard and mobile touch HUD.
+- [Project Overview & Showcase](https://roadster-play.vercel.app/): Homepage with performance benchmark matrix, simulation mode selector, and FAQs.
+- [About & Physics Architecture](https://roadster-play.vercel.app/about): Overview of Three.js engine, Tri-Motor AWD torque vectoring, and aerospace aerodynamics.
+- [Contact & Support](https://roadster-play.vercel.app/contact): Bug reporting, telemetry diagnostics, and developer inquiries.
+- [Privacy Policy](https://roadster-play.vercel.app/privacy): Client-side execution details, local storage usage, and Google Analytics disclosures.
+- [Terms & Conditions](https://roadster-play.vercel.app/terms): Independent educational fan project license and terms of service.
+
+## Simulation Modes
+
+- **City Free Roam**: Open-world sandbox with architectural stunt ramps, 90° vertical skyscraper climbs, and drift combos.
+- **1/4 Mile Drag Strip**: Regulation NHRA Christmas tree staging duel against the Rimac Nevera, Bugatti Tourbillon, and Porsche Taycan.
+- **Alpine Mountain GP**: Mario Kart-inspired 42m elevation mountain climb with high-camber curves and speed boost strips.
+- **Cyber Combat Arena**: Demolition survival dome featuring kinetic EMP shockwaves, energy canisters, and drone opponents.
+
+## Controls Guide
+
+- **Drive / Steer**: `W, A, S, D` or `Arrow Keys`
+- **SpaceX Thruster Burst**: `Space`
+- **High-Slip Drift Mode**: `Left Ctrl`
+- **Active 2G Wall & Ceiling Suction**: `G`
+- **Cycle Simulation Modes**: `M`
+- **Cycle Camera Views**: `C` (Cockpit, Chase, Top-Down)
+- **Auto-Upright Chassis**: `U`
+
+## Optional & Comprehensive
+
+- [Full LLM Documentation](https://roadster-play.vercel.app/llms-full.txt): Comprehensive deep-dive documentation into physics algorithms, telemetry math, and tech stack details.

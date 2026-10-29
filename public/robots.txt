@@ -1,4 +1,34 @@
+# Robots.txt for 3D Tesla Roadster Game
+# https://roadster-play.vercel.app/
+
 User-agent: *
 Allow: /
 
+# Search Engine Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# AI Search & Summarization Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Sitemap Index
 Sitemap: https://roadster-play.vercel.app/sitemap.xml

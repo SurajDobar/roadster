@@ -1,0 +1,67 @@
+# 3D Tesla Roadster Game — Comprehensive LLM Reference
+
+## Project Identity & Mission
+The **3D Tesla Roadster Game** (hosted at https://roadster-play.vercel.app/) is an independent, non-commercial educational project and real-time WebGL hypercar simulator. It models the physics and theoretical engineering of the 2026 Tesla Roadster equipped with the SpaceX Package.
+
+The project runs completely client-side in standard web browsers using Three.js and WebGL 2.0. No installation, plugins, account creation, or payment are required.
+
+## Key Technical Specifications
+- **0–60 MPH Acceleration**: 0.58 seconds (with cold-gas nitrogen thruster assist)
+- **Top Speed**: >250 MPH (402+ km/h)
+- **1/4 Mile Drag Trap**: 7.95 seconds @ 190+ MPH
+- **Powertrain**: Tri-Motor All-Wheel Drive (1 front, 2 rear) delivering over 1,800 horsepower
+- **Thruster System**: 4 Composite Overwrapped Pressure Vessel (COPV) cold-gas nitrogen thrusters generating up to 1.8G instantaneous burst force
+- **Surface Adhesion**: Active 2G Venturi undertray vacuum turbines enabling 90° vertical wall climbs and inverted ceiling driving
+- **Drift Dynamics**: Dynamic tire slip angles based on Pacejka curves with counter-steer assist
+- **Rendering Engine**: Three.js r128 with custom PBR vehicle paint shaders, dynamic cubemap reflections, and meshopt model compression (1.8MB GLB payload)
+- **Audio Pipeline**: Procedural Web Audio API frequency modulation synthesized dynamically in real time
+
+## Simulation Tracks & Game Modes
+1. **City Free Roam (Sandbox)**:
+   - Full open-world urban environment with stunt ramps, skyscrapers, and loop-de-loops.
+   - 90° vertical skyscraper climbs utilizing the active 2G vacuum system.
+   - Drift score multiplier system tracking angle and duration.
+
+2. **1/4 Mile Drag Strip**:
+   - Regulation NHRA Christmas tree staging system with pre-stage, stage, amber countdown, and green light.
+   - False-start (red light) detection with reaction time measurement down to the millisecond.
+   - Head-to-head racing against AI rival hypercars:
+     - Rimac Nevera (1.74s 0-60, 1,914 HP)
+     - Bugatti Tourbillon (2.00s 0-60, 1,800 HP V16 Hybrid)
+     - Porsche Taycan Turbo GT (2.10s 0-60, 1,019 HP)
+
+3. **Alpine Mountain Circuit GP**:
+   - 42-meter procedural alpine ribbon circuit with high-camber S-curves and hairpin turns.
+   - Neon boost recharge pads delivering +50 MPH instantaneous speed injection.
+   - Lap timer telemetry with checkpoint splits.
+
+4. **Cyber Combat Arena**:
+   - Enclosed grid combat dome with energy canisters and dynamic hazard zones.
+   - Kinetic EMP shockwave pulses triggered to disable hostile drone units.
+   - Vehicle demolition physics and wave survival scoring.
+
+## Controls & Telemetry
+- **Throttle / Acceleration**: `W` or `Up Arrow`
+- **Steering**: `A` / `D` or `Left` / `Right Arrow`
+- **Braking / Reverse**: `S` or `Down Arrow`
+- **SpaceX Thruster Boost**: `Space` (Keyboard) or Rocket Icon (Mobile HUD)
+- **High-Slip Drift Mode**: `Left Ctrl`
+- **Active 2G Wall Suction**: `G`
+- **Cycle Simulation Modes**: `M`
+- **Cycle Cameras**: `C` (Cockpit view, Third-person chase, Overhead bird's-eye)
+- **Auto-Upright Chassis**: `U` (Gyroscopic stabilization recovery)
+- **Reset Vehicle**: `R`
+
+## Touch & Mobile Device Support
+The simulator automatically detects touch interfaces and renders:
+- Virtual analog steering wheel with smooth rotational tracking
+- Dedicated on-screen accelerator and brake pedals
+- Prominent Cold-Gas Thruster boost trigger
+- Retina high-DPI canvas scaling
+
+## Privacy & Legal Architecture
+- **Zero Accounts**: No sign-up, user profiles, or passwords.
+- **Client-Side Execution**: All Three.js draw calls and physics calculations happen locally on user GPU/CPU.
+- **Local Storage**: `roadster-theme` (light/dark preference) and `roadster-records` (personal best times) remain solely on client device.
+- **Analytics**: Google Analytics 4 (`G-L9VFLEVQ68`) deployed with standard IP anonymization to track aggregate technical uptime, GPU compatibility, and frame rates.
+- **Trademark Disclaimer**: An independent fan simulator celebrating automotive innovation. Not affiliated with, sponsored by, or endorsed by Tesla, Inc. or SpaceX.
