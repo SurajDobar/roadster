@@ -21,7 +21,17 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-<meta name="google-site-verification" content="Pq1K2d7jnfoiB4Yo97FwFed6FULnOyvp3zvXRwydwFM" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9VFLEVQ68" is:inline></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-L9VFLEVQ68');
+  </script>
+
+  <meta name="google-site-verification" content="Pq1K2d7jnfoiB4Yo97FwFed6FULnOyvp3zvXRwydwFM" />
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -517,14 +527,12 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
       </a>
 
       <!-- Desktop Navigation -->
-      <nav class="desktop-nav" style="display: flex; align-items: center; gap: 1.15rem;" aria-label="Primary navigation">
+      <nav class="desktop-nav" style="display: flex; align-items: center; gap: 1.25rem;" aria-label="Primary navigation">
         <a href="/" class={`nav-link ${currentPath === '/' ? 'active' : ''}`}>Overview</a>
-        <a href="/#features" class="nav-link">Features</a>
         <a href="/#modes" class="nav-link">Modes</a>
-        <a href="/about" class={`nav-link ${currentPath === '/about' ? 'active' : ''}`}>About Us</a>
-        <a href="/contact" class={`nav-link ${currentPath === '/contact' ? 'active' : ''}`}>Contact Us</a>
-        <a href="/privacy" class={`nav-link ${currentPath === '/privacy' ? 'active' : ''}`}>Privacy</a>
-        <a href="/terms" class={`nav-link ${currentPath === '/terms' ? 'active' : ''}`}>Terms</a>
+        <a href="/#features" class="nav-link">Features</a>
+        <a href="/about" class={`nav-link ${currentPath === '/about' ? 'active' : ''}`}>About</a>
+        <a href="/contact" class={`nav-link ${currentPath === '/contact' ? 'active' : ''}`}>Contact</a>
         
         <!-- Light / Dark Mode Toggle Button with crisp icon -->
         <button id="theme-toggle-btn" class="btn-theme-toggle" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
@@ -549,8 +557,8 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     <div id="mobile-drawer" class="mobile-drawer">
       <div style="display: flex; flex-direction: column; gap: 0.6rem; padding: 1rem 1.5rem 1.5rem;">
         <a href="/" class={`nav-link ${currentPath === '/' ? 'active' : ''}`} style="padding: 0.35rem 0;">Overview</a>
+        <a href="/#modes" class="nav-link" style="padding: 0.35rem 0;">Simulation Modes</a>
         <a href="/#features" class="nav-link" style="padding: 0.35rem 0;">Features &amp; Physics</a>
-        <a href="/#modes" class="nav-link" style="padding: 0.35rem 0;">Tesla Roadster Open World Modes</a>
         <a href="/about" class={`nav-link ${currentPath === '/about' ? 'active' : ''}`} style="padding: 0.35rem 0;">About Us</a>
         <a href="/contact" class={`nav-link ${currentPath === '/contact' ? 'active' : ''}`} style="padding: 0.35rem 0;">Contact Us</a>
         <a href="/privacy" class={`nav-link ${currentPath === '/privacy' ? 'active' : ''}`} style="padding: 0.35rem 0;">Privacy Policy</a>
