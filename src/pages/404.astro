@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="404: Page Not Found | 3D Tesla Roadster Game" 
+  description="The page you requested was not found. Return to the 3D Tesla Roadster driving simulator."
+  canonical="https://roadster-play.vercel.app/404"
+  robots="noindex, follow"
+>
+  <div style="min-height: calc(100vh - 180px); display: flex; align-items: center; justify-content: center; padding: 4rem 1.5rem; text-align: center; position: relative; overflow: hidden; background: var(--canvas);">
+    
+    <!-- Subtle Background Radial Glow -->
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 700px; height: 350px; background: radial-gradient(ellipse at center, rgba(238, 0, 0, 0.08) 0%, rgba(121, 40, 202, 0.04) 45%, rgba(0, 0, 0, 0) 70%); pointer-events: none; z-index: 0;" aria-hidden="true"></div>
+
+    <div style="position: relative; z-index: 1; max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+      
+      <!-- Eyebrow Badge -->
+      <div style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 4px 14px; border-radius: 100px; background: var(--canvas-elevated); border: 1px solid var(--hairline); box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+        <span class="mono-eyebrow" style="color: var(--error);">ERROR 404</span>
+        <span style="color: var(--hairline);" aria-hidden="true">•</span>
+        <span class="mono-eyebrow" style="color: var(--mute);">OFF TRACK</span>
+      </div>
+
+      <!-- Giant 404 Display -->
+      <div style="font-family: 'Geist Mono', monospace; font-size: clamp(4rem, 12vw, 6.5rem); font-weight: 700; line-height: 1; letter-spacing: -0.05em; color: var(--ink);">
+        4<span style="color: var(--link);">0</span>4
+      </div>
+
+      <!-- Heading -->
+      <h1 class="heading-lg" style="color: var(--ink); text-wrap: balance;">
+        Wrong Turn at 250 MPH
+      </h1>
+
+      <!-- Description -->
+      <p class="body-lg" style="color: var(--body); max-width: 480px; margin: 0 auto; line-height: 1.6;">
+        The track or page you are looking for does not exist, was moved, or got vaporized by cold-gas thrusters.
+      </p>
+
+      <!-- Action Buttons -->
+      <div style="display: flex; gap: 0.85rem; margin-top: 0.75rem; flex-wrap: wrap; justify-content: center;">
+        <a href="/play" class="btn-pill-primary" style="height: 42px; padding: 0 22px; font-size: 14px;" aria-label="Play Simulator Now">
+          <span>Launch Simulator</span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <a href="/" class="btn-pill-secondary" style="height: 42px; padding: 0 18px; font-size: 14px;">
+          Return to Home
+        </a>
+        <button 
+          id="back-btn" 
+          class="btn-pill-secondary" 
+          style="height: 42px; padding: 0 16px; font-size: 14px;"
+          type="button"
+          aria-label="Go Back to Previous Page"
+        >
+          <span aria-hidden="true">←</span> Go Back
+        </button>
+      </div>
+
+      <!-- Helpful Pro Tip -->
+      <div style="margin-top: 1.5rem; padding: 8px 16px; border-radius: 6px; background: var(--canvas-elevated); border: 1px solid var(--hairline); font-size: 12px; color: var(--mute); font-family: 'Geist Mono', monospace;">
+        <span>TIP: Press <span class="kbd-pill" style="min-width: 20px; height: 20px; font-size: 10px;">U</span> in-game if your Roadster flips over</span>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const backBtn = document.getElementById('back-btn');
+    if (backBtn) {
+      backBtn.addEventListener('click', () => {
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          window.location.href = '/';
+        }
+      });
+    }
+  </script>
+</Layout>

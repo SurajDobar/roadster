@@ -5,6 +5,7 @@ interface Props {
   canonical?: string;
   keywords?: string;
   ogImage?: string;
+  robots?: string;
 }
 
 const {
@@ -12,7 +13,8 @@ const {
   description,
   canonical = 'https://roadster-play.vercel.app/',
   keywords = '3D Tesla Roadster Game, Tesla Roadster game, Roadster game, Tesla Roadster driving game, Tesla Roadster open world game, play Tesla Roadster online, webgl car game, hypercar simulator',
-  ogImage = 'https://roadster-play.vercel.app/og-image.png'
+  ogImage = 'https://roadster-play.vercel.app/og-image.png',
+  robots = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
 } = Astro.props;
 
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
@@ -41,7 +43,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
   <meta name="title" content={title} />
   <meta name="description" content={description} />
   <meta name="keywords" content={keywords} />
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="robots" content={robots} />
   <meta name="author" content="Tesla Roadster 3D Game" />
   <link rel="canonical" href={canonical} />
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
